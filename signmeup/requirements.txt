@@ -1,0 +1,4 @@
+-e git://github.com/pinax/django-mailer.git#egg=django-mailer
+django-celery-email
+django-celery
+celery-with-redis

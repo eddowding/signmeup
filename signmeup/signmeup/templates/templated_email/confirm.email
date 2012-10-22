@@ -1,0 +1,7 @@
+{% block subject %}My subject for {% endblock %}
+{% block plain %}
+
+Email Link: http://{{ site.domain }}/confirm/{{form.model_token}}
+{{ form }}
+
+{% endblock %}
