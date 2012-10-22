@@ -1,0 +1,26 @@
+html, body {
+    height:100%;
+    width:100%;
+}
+
+#map, #top_layer {
+    height:100%;
+    width:100%;
+}
+
+#top_layer {
+    position:absolute;
+    top:0;
+}
+
+.box {
+/*    
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+*/    
+    background-color:rgba(255, 255, 255, 0.8);
+    max-width:300px;
+    padding:1em;
+    height:100%;
+}

@@ -1,3 +1,6 @@
+ffs
+git+git://github.com/wpjunior/django-mongotools.git
+django-templated-email
 -e git://github.com/pinax/django-mailer.git#egg=django-mailer
 django-celery-email
 django-celery
