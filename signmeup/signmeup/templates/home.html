@@ -1,8 +1,17 @@
 {% extends "base.html" %}
+{% block body_id %}home{% endblock body_id %}
 {% block content %}
-    <form method=post class=form>
+    <form method=post class=form id="postcode_form">
         {% csrf_token %}
         {{ form }}
         <input type="submit" name="some_name" value="Eat me" id="some_name">
     </form>
 {% endblock content %}
+
+{% block page_scripts %}
+
+<script type="text/javascript" charset="utf-8">
+    setHomeView(map);
+</script>
+
+{% endblock page_scripts %}

@@ -5,21 +5,39 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import Http404
 from django.utils.functional import lazy
 
-from django.views.generic import TemplateView, RedirectView
+from django.views.generic import TemplateView, RedirectView, FormView
 from mongotools.views import CreateView
+from djpjax import PJAXResponseMixin
 
-from forms import SignupForm
+from forms import SignupForm, PostcodeForm
 from models import SignUp
 
-class HomeView(CreateView):
-    form_class = SignupForm
+class HomeView(FormView):
+    form_class = PostcodeForm
     
     template_name = "home.html"
     
     def get_success_url(self):
-        return reverse('thanks')
+        # import pdb
+        # pdb.set_trace()
+        postcode = self.request.POST['postcode'].replace(' ', '')
+        url = reverse('postcode_details', kwargs={'postcode' : postcode})
+        return url
+
+class PostcodeDetails(PJAXResponseMixin, CreateView):
+    form_class = SignupForm
     
-    # def get(self, request):
+    template_name = "postcode_details.html"
+    pjax_template_name = "postcode_details_ahah.html"
+
+    def get_initial(self):
+        return {
+            'postcode' : self.kwargs['postcode']
+        }
+        
+    def get_success_url(self):
+        return reverse('thanks')
+
         
 class ThanksView(TemplateView):
     template_name = "thanks.html"

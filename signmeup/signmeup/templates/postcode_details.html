@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "postcode_details_ahah.html" %}
+{% endblock content %}
+{% block page_scripts %}
+<script type="text/javascript" charset="utf-8">
+    move_to_postcode('{{form.postcode.value}}')
+</script>
+{% endblock page_scripts %}
+

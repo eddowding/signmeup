@@ -7,8 +7,12 @@ from django.contrib.sites.models import get_current_site
 from templated_email import send_templated_mail
 from redisforms.forms import RedisMongoForm
 from mongotools.forms import MongoForm
+from django import forms
 
 from models import SignUp
+
+class PostcodeForm(forms.Form):
+    postcode = UKPostcodeField()
 
 class SignupForm(RedisMongoForm):
     class Meta:
