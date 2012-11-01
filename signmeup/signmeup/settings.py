@@ -51,7 +51,6 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = "%s/media/" % ROOT
-print MEDIA_ROOT
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -130,6 +129,8 @@ INSTALLED_APPS = [
     'redisforms',
     'djcelery',
     'djcelery_email',
+    'tastypie',
+    'tastypie_mongoengine',
 ]
 
 # A sample logging configuration. The only tangible logging
@@ -168,3 +169,8 @@ CELERY_EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 BROKER_URL = 'redis://localhost:6379/0'
+
+MONGO_DATABASE_NAME = 'database'
+
+import mongoengine
+mongoengine.connect('signups')

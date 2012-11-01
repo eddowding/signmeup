@@ -7,3 +7,5 @@ django-celery
 celery-with-redis
 django-tastypie
 git+git://github.com/jacobian/django-pjax.git
+django-tastypie-mongoengine
+

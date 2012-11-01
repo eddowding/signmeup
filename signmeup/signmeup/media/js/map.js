@@ -1,3 +1,5 @@
+var points_data
+
 function setHomeView() {
     return map.setView([54.805, -3.09], 6)
 }
@@ -23,6 +25,35 @@ function move_to_postcode(postcode) {
         $.getJSON('http://mapit.mysociety.org/postcode/' + postcode, function(data) {
             var latlng = new L.LatLng(data.wgs84_lat, data.wgs84_lon);
             map.setView(latlng, 14)
+            map.on('moveend', function() {
+                load_points()
+            })
         })
     }
 }
+
+function load_points() {
+    box = map.getBounds()
+    points = [
+        box._southWest.lat,
+        box._southWest.lng,
+        box._northEast.lat,
+        box._northEast.lng
+    ]
+    return $.getJSON('/api/v1/signup/?format=json&within_box=' + points.join(), function(data) {
+        add_points(data)
+    })
+}
+
+
+function add_points(points_data) {
+    for (point in points_data.objects) {
+        p = points_data.objects[point]
+        var marker = L.marker(p.location).addTo(map);
+    }
+}
+
+
+
+
+
