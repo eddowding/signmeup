@@ -1,0 +1,24 @@
+<h1>If we want better food, we have to ask for it.</h1>
+{# <form method="post" accept-charset="utf-8" class="form-horizontal"> #}
+{#     {% csrf_token %} #}
+{#      #}
+{#     <fieldset> #}
+{#         <legend><strong>Step 1</strong>: tell us what you want</legend>         #}
+{#         <label>{{ form.local_food }} {{ form.local_food.label }}</label> #}
+{#         <label>{{ form.open_late }} {{ form.open_late.label }}</label> #}
+{#         {{ form }} #}
+{#         <p><input type="submit" value="Continue &rarr;"></p> #}
+{#     </fieldset> #}
+{#     <fieldset> #}
+{#         <legend><strong>Step 2</strong>: we’ll collect and map this demand&hellip;</legend> #}
+{#         <legend><strong>Step 3</strong>: &hellip;and tell food businesses about it</legend> #}
+{#         <p><a href="/about">Find out more</a></p> #}
+{#     </fieldset> #}
+{#  #}
+{# </form> #}
+
+
+
+
+{% load crispy_forms_tags %}
+{% crispy form %}

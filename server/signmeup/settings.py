@@ -131,6 +131,7 @@ INSTALLED_APPS = [
     'djcelery_email',
     'tastypie',
     'tastypie_mongoengine',
+    'crispy_forms',
 ]
 
 # A sample logging configuration. The only tangible logging

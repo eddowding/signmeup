@@ -17,7 +17,7 @@ from redisforms import forms
 class FakeModel(models.Model):
     name = models.CharField(blank=True, max_length=100)
     
-class FakeForm(forms.ModelForm):
+class FakeForm(forms.RedisMongoForm):
     class Meta:
         model = FakeModel
 

@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block body_id %}home{% endblock body_id %}
 {% block content %}
-    <h1>
-        Want better food?
-    </h1>
+    <h1>Want better food?</h1>
     <form method=post class="form form-horizontal" id="postcode_form">
         {% csrf_token %}
+        <label>Enter your postcode:</label>
         {{ form.postcode }}
         <input type="submit" name="some_name" value="Ask for it" id="some_name">
     </form>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>The more people who ask for better food, the quicker we’ll get&nbsp;it.</h1>
+<h2>Tell your friends:</h2>
+
+
+<div class="share_buttons">
+    <style>
+        /* Stop the odd tick from showing on twiter */
+        .st-twitter-counter img{
+            display:none;
+        }
+    </style>
+    {# <div class='st_fblike_hcount' displayText='Facebook Like'></div> #}
+    <div class='span3 st_twitter_hcount' displayText='Tweet'></div>
+    <div class='span3 st_plusone_hcount' displayText='Google +1'></div>
+    <div class='span3 st_email_hcount' displayText='Email'></div>
+    <div class='span3 st_tumblr_hcount' displayText='Tumblr'></div>
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "9aeac923-0991-448b-8055-93ac8b9e4771"});</script>
+</div>
+
+{% endblock content %}

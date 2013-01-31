@@ -1,0 +1,3 @@
+# I Want Better Food #
+
+This is a demand mapping project.  Users can register interest in various things (free range, organic, etc) and have the results displayed on a map.

@@ -1,8 +1,6 @@
 from tastypie_mongoengine import resources
-from tastypie.resources import ALL, ALL_WITH_RELATIONS
+# from tastypie.resources import ALL, ALL_WITH_RELATIONS
 from models import SignUp
-
-print resources.QUERY_TERMS_ALL
 
 class SignUpResource(resources.MongoEngineResource):
     class Meta:

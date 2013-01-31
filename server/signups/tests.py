@@ -8,7 +8,7 @@ Replace this with more appropriate tests for your application.
 from django.test import TestCase
 from django.core import mail
 
-from models import User
+from models import SignUp
 import forms
 
 class SimpleTest(TestCase):
@@ -18,9 +18,16 @@ class SimpleTest(TestCase):
         """
         self.assertEqual(1 + 1, 2)
     
+    def setUp(self):
+        self.u = SignUp(
+            name="Sym",
+            postcode="SE22 8DJ",
+            email="sym.roe@talusdesign.co.uk"
+            )
+        
+    
     def test_model_init(self):
-        u = User(name="Sym")
-        u.save()
+        self.u.save()
         
         # print User.objects.all()
     
@@ -36,21 +43,21 @@ class SimpleTest(TestCase):
 
         self.assertFalse(f1.is_valid())
         self.assertRaises(ValueError, f1.save)
-        f2.save()
+        self.assertTrue(f2.save)
 
         
     def test_token(self):
-        f = forms.SignupForm()
+        f = forms.SignupForm(instance=self.u)
         f.model_token(1)
         
     def test_email_body(self):
         f = forms.SignupForm({
             'name' : 'sym', 
             'email' : 'a@b.com', 
-            'postcode' : 'foo'
+            'postcode' : 'SE22 8DJ'
             })
         f.save()
-        print mail.outbox[0].body
+        # print mail.outbox[0].body
     
     def test_create_view(self):
         self.client.get('/')
