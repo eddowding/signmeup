@@ -1,15 +1,22 @@
 from tastypie_mongoengine import resources
-# from tastypie.resources import ALL, ALL_WITH_RELATIONS
+from tastypie.authorization import Authorization
 from models import SignUp
 
 class SignUpResource(resources.MongoEngineResource):
     class Meta:
         queryset = SignUp.objects.all()
-        allowed_methods = ('get',)
+        allowed_methods = ('get','post')
+        authorization = Authorization()
         filtering = {
             'location': resources.QUERY_TERMS_ALL
         }
+    
+    def dehydrate_email(self, bundle):
+           return None
 
+    def dehydrate_name(self, bundle):
+           return None
+    
     def build_filters(self, filters=None):
         if filters is None:
             filters = {}

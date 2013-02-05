@@ -1,28 +1,21 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
-
 from django.test import TestCase
-from django.core import mail
+# from django.core import mail
+
+from django.test.utils import override_settings
+
+from tastypie.test import ResourceTestCase
 
 from models import SignUp
 import forms
 
 class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
-    
     def setUp(self):
         self.u = SignUp(
             name="Sym",
             postcode="SE22 8DJ",
-            email="sym.roe@talusdesign.co.uk"
+            email="sym.roe@talusdesign.co.uk",
+            local_food = True,
+            open_late = False,
             )
         
     
@@ -36,8 +29,6 @@ class SimpleTest(TestCase):
         # print forms.SignupForm()
 
     def test_form_save(self):
-
-        from mongotools.forms import MongoForm
         f1 = forms.SignupForm({'name' : 'sym', 'email' : 'a@b.com',})
         f2 = forms.SignupForm({'name' : 'sym', 'email' : 'a@b.com', 'postcode' : 'foo'})
 
@@ -50,21 +41,39 @@ class SimpleTest(TestCase):
         f = forms.SignupForm(instance=self.u)
         f.model_token(1)
         
-    def test_email_body(self):
+    def test_form_save_true(self):
         f = forms.SignupForm({
             'name' : 'sym', 
             'email' : 'a@b.com', 
             'postcode' : 'SE22 8DJ'
             })
         f.save()
-        # print mail.outbox[0].body
     
     def test_create_view(self):
         self.client.get('/')
 
 
-
-
+class APITests(ResourceTestCase):
+    
+    @override_settings(DEBUG=True)
+    def test_post(self):
+        data = {
+            'name' : 'sym',
+            'email' : 'sym.roe@talusdesign.co.uk',
+            'postcode' : 'SE22 8DJ'
+        }
+        
+        self.assertEqual(SignUp.objects.count(), 0)
+        req = self.api_client.post(
+            '/api/v1/signup/', 
+            format='json',
+            data=data
+        )
+        self.assertHttpCreated(req)
+        # Verify a new one has been added.
+        self.assertEqual(SignUp.objects.count(), 1)
+    
 
 
         
+    

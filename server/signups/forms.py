@@ -46,7 +46,7 @@ class SignupForm(RedisMongoForm):
     
     class Meta:
         document = SignUp
-        exclude = ('location',)
+        exclude = ('location','mapit_info',)
     
     name = forms.CharField()
     postcode = UKPostcodeField()

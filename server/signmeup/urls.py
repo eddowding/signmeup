@@ -1,9 +1,13 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from tastypie.api import Api
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+
+from signups.api import SignUpResource
+from localinfo.api import LocalInfoResource
+
+v1_api = Api(api_name='v1')
+v1_api.register(SignUpResource())
 
 # if settings.DEBUG:
 urlpatterns = patterns('',
@@ -19,8 +23,12 @@ urlpatterns += patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
+    # API
+    (r'^api/', include(v1_api.urls)),
+
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     url(r'', include('signups.urls')),
 )
 
