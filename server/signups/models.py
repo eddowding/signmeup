@@ -13,7 +13,7 @@ class SignUp(Document):
     # Basic info
     name = fields.StringField(required=True)
     email = fields.EmailField(required=True)
-    postcode = fields.StringField(required=True, name="Postcode")
+    postcode = fields.StringField(required=True, name="Postcode", default="")
     location = fields.GeoPointField()
     
     mapit_info = fields.DictField()

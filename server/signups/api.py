@@ -20,17 +20,18 @@ class SignUpResource(resources.MongoEngineResource):
     def build_filters(self, filters=None):
         if filters is None:
             filters = {}
-
+            
         orm_filters = super(SignUpResource, self).build_filters(filters)
-
-        if "within_box" in filters:
-            points = filters['within_box'].split(',')
+    
+        if "within_distance" in filters:
+            points = filters['within_distance'].split(',')
             points = map(float, points)
-            box = [
+            distance = [
                 (points[0],points[1]),
-                (points[2],points[3])
+                5
             ]
-            orm_filters["location__within_box"] = box
 
+            orm_filters["location__within_distance"] = distance
+    
         return orm_filters
            

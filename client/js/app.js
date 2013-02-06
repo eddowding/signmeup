@@ -4,8 +4,9 @@ define([
     'underscore',
     'backbone',
     'marionette',
-    'views/mapView'
-    ], function($, _, Backbone, Marionette, mapView) {
+    'views/mapView',
+    'collections/signups'
+    ], function($, _, Backbone, Marionette, mapView, signupCollection) {
     'use strict';
     
     var App = new Marionette.Application();
@@ -41,7 +42,8 @@ define([
     });
     
     App.addInitializer(function(options) {
-        App.map = new mapView();
+        App.signups = new signupCollection;
+        App.map = new mapView({collection: App.signups});
     });
     
     App.vent.on("map:panto", function(latlng) {

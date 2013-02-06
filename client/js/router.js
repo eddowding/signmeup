@@ -28,6 +28,7 @@ define([
                     var view = new postcodeView({model: postcode_model, signup: signup_model});
                     postcode_model.fetch({
                         success: function() {
+                            signup_model.set({location: [postcode_model.get('wgs84_lat'), postcode_model.get('wgs84_lon')]})
                             App.regionMain.show(view);
                             App.vent.trigger("infobox:show")
                         }

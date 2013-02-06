@@ -19,6 +19,7 @@ define([
         onRender: function() {
             App.vent.trigger('map:setview')
             var signup = this.options.signup;
+            var postcode = this.model.get('postcode')
             var form = this.$el.find('form');
             form.validate({
                 rules: {
@@ -36,6 +37,7 @@ define([
                     var data = Backbone.Syphon.serialize(form);
                     // Make model from data, save it.
                     signup.set(data)
+                    signup.set({postcode: postcode})
                     signup.save(signup.attributes, {
                         success: function() {
                             App.Router.navigate('thanks/',  {trigger: true} )

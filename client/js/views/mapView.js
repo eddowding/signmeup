@@ -10,10 +10,34 @@ define([
         initialize: function(options) {
             this.start = this.options.start || new L.LatLng(51.47, -0.08);
             this.initial_zoom = this.options.start || 8
-            
             this.on("map:setview", this.setview)
-            
+            this.iconClass = L.icon({
+                iconUrl: '/static/images/marker-icon.png',
+                iconSize: [28, 45],
+                iconAnchor: [14, 45],
+                popupAnchor: [-3, -76],
+                shadowUrl: '/static/images/marker-shadow.png',
+                shadowSize: [68, 95],
+                shadowAnchor: [22, 94]
+            });
+
             return this.render();
+        },
+        showMarkers: function() {
+            var map = this.map;
+            var icon = this.iconClass;
+            var bounds = map.getCenter()
+            this.collection.bounds_str = bounds.lat + ',' + bounds.lng
+            this.collection.fetch({
+                success: function(collection) {
+                    var objects = collection.models[0].get('objects');
+                    _.each(objects, function(signup) {
+                        if (signup.location != undefined) {
+                            L.marker(signup.location, {icon:icon}).addTo(map);
+                        }
+                    })
+                }
+            })
         },
         fixLatLng: function(latlng) {
             var newlat, newlon, lat_shiftamount, lon_shiftamount;
@@ -34,8 +58,9 @@ define([
             return [newlat ,newlon]
         },
         panTo: function(latlng) {
-            latlng = this.fixLatLng(latlng)
-            this.map.panTo(latlng)
+            latlng = this.fixLatLng(latlng);
+            this.map.panTo(latlng);
+            this.showMarkers();
         },
         render: function() {
             var res = [2500, 1000, 500, 200, 100, 50, 25, 10, 5, 4, 2.5, 2, 1];
@@ -75,7 +100,6 @@ define([
                 map.addLayer(os200);
             }
             
-            console.debug(this.initial_zoom)
             map.setView(this.start, this.initial_zoom);
 
             function adjustTileSize(e) {
@@ -91,6 +115,7 @@ define([
             }
             map.on('zoomend', adjustTileSize);
             this.map = map;
+            this.showMarkers()
         },
     });
 })
