@@ -28,6 +28,19 @@ define([
     })
     
     App.addInitializer(function(options) {
+        
+        require([
+            'jspostcode',
+            'jquery.validate'
+            ], function() {
+                // Validators
+                jQuery.validator.addMethod("postcode", function(value, element) { 
+                  return checkPostCode(value)
+                }, "Please enter a valid UK postcode");
+            })
+    });
+    
+    App.addInitializer(function(options) {
         App.map = new mapView();
     });
     
@@ -40,17 +53,17 @@ define([
     });
 
     App.vent.on("infobox:show", function(id){
-        
-        
         require([
             'views/infoboxView',
             'models/localinfoModel'
         ], function(infoboxView, localinfoModel){
-            var info_model = new localinfoModel({ward: id});
+            // var info_model = new localinfoModel({ward: id});
+            // Just show all of thr UK for now:
+            var info_model = new localinfoModel({id: 'UK'});
             var view = new infoboxView({model: info_model});
             info_model.fetch({
                 success: function() {
-                    App.regionInfobox.show()
+                    App.regionInfobox.show(view)
                     App.regionInfobox.$el.slideDown()
                 }
             });

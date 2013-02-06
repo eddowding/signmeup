@@ -8,6 +8,7 @@ from localinfo.api import LocalInfoResource
 
 v1_api = Api(api_name='v1')
 v1_api.register(SignUpResource())
+v1_api.register(LocalInfoResource())
 
 # if settings.DEBUG:
 urlpatterns = patterns('',

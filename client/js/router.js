@@ -7,6 +7,7 @@ define([
             routes: {
                 ''                           : 'home',
                 'postcode/:postcode/'        : 'postcode',
+                'thanks/'                     : 'thanks',
             },
             home: function() {
                 require([
@@ -24,15 +25,25 @@ define([
                 ], function(postcodeView, postcodeModel, signupModel){
                     var postcode_model = new postcodeModel({postcode: postcode});
                     var signup_model = new signupModel();
-                    var view = new postcodeView({model: postcode_model});
+                    var view = new postcodeView({model: postcode_model, signup: signup_model});
                     postcode_model.fetch({
                         success: function() {
                             App.regionMain.show(view);
+                            App.vent.trigger("infobox:show")
                         }
                     });
                 });
             },
-            
+            thanks: function() {
+                    require([
+                        'views/thankyouView',
+                    ], function(thankyouView){
+                        App.vent.trigger('infobox:show')
+                        var view = new thankyouView();
+                            App.regionMain.show(view)
+                        });
+                
+            }
             
         })
 });

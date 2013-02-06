@@ -4,6 +4,6 @@ define([
     'marionette',
 ], function(App, Backbone, Marionette) {
     return Backbone.Marionette.ItemView.extend({
-        template: '#infoboxView',
+        template: '#thankyouView',
     });
 });

@@ -8,13 +8,6 @@ define([
     return Backbone.Marionette.ItemView.extend({
         template: '#postcodeForm',
         onRender: function() {
-            /*
-                TODO extrct this out a bit more
-            */
-            // Validators
-            jQuery.validator.addMethod("postcode", function(value, element) { 
-              return checkPostCode(value)
-            }, "Please enter a valid UK postcode");
             
             this.$el.find('form').validate({
                 rules: {

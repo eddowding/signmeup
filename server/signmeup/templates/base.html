@@ -73,8 +73,26 @@
         <h1><%= friendlyName%></h1>
         <h1><%= postcode %></h1>
         <form>
+        <label for="name">Name<input type=text name=name id=name value="asd"></label>
+        <label for="email">Email<input type=email name=email id=email value="asd@foo.com"></label>
+        <label for="postcode">Postcode<input type=postcode name=postcode id=postcode value="SE22 8DJ"></label>
+        <label for="local_food">Local Food <input type=checkbox name=local_food id=local_food></label>
+
         <button type=submit></button>
         </form>
+        </script>
+
+        <script id="infoboxView" type="text/template">
+        <h1>The story so far&hellip;</h1>
+        <dl>
+            <dt>Local Food</dt>
+            <dd><%= info.local_food %></dd>
+        </dl>
+        </script>
+        
+        <script id="thankyouView" type="text/template">
+        <h1>Hey, thanks!</h1>
+        <h1 style="font-size: 15em;line-height: 1em;" align=center>☕</h1>
         </script>
         
          
