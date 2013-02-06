@@ -14,7 +14,6 @@ django-celery==3.0.11
 django-celery-email==1.0.3
 django-celery-with-redis==3.0
 -e git+git@github.com:jezdez/django_compressor.git@c9d5f43df839d44345965484dddfd7f034e207d2#egg=django_compressor-dev
-django-crispy-forms==1.2.3
 -e git://github.com/pinax/django-mailer.git@919805e25fc18b06487b25414d4e5d5e05a92108#egg=django_mailer-dev
 -e git://github.com/wpjunior/django-mongotools.git@f190a29d4c997d97e232b1443a1520006142b169#egg=django_mongotools-dev
 django-pjax==1.2
