@@ -47,8 +47,8 @@ define([
         },
         fixLatLng: function(latlng) {
             var newlat, newlon, lat_shiftamount, lon_shiftamount;
-            lat_shiftamount = 0.009;
-            lon_shiftamount = 0.002;
+            lat_shiftamount = 0.000;
+            lon_shiftamount = 0.000;
             var lat = latlng[0];
             var lon = latlng[1];
             if (lat > 0) {
