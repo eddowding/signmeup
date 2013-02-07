@@ -1,5 +1,6 @@
 from mongoengine.document import Document
 from mongoengine import fields
+from templated_email import send_templated_mail
 
 from localinfo.models import LocalInfo
 
@@ -24,7 +25,20 @@ class SignUp(Document):
     
     
     def save(self, *args, **kwargs):
-        super(SignUp, self).save(*args, **kwargs)
+        # New model
+        if not self.pk:
+            send_templated_mail(
+                template_name='new_signup',
+                from_email='hello@sustaination.co',
+                recipient_list=[self.email],
+                context={
+                    'name': self.name,
+                    'email': self.email,
+                    'postcode': self.postcode,
+                }
+            )
+        
+        m = super(SignUp, self).save(*args, **kwargs)
         
         # For now, just update the whole coultry.  More to follow.
         area, created = LocalInfo.objects.get_or_create(type='country', name='UK')
@@ -34,3 +48,6 @@ class SignUp(Document):
                 area.info[key] = count
         area.save()
         
+
+        
+        return m

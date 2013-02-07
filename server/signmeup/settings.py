@@ -177,3 +177,5 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django.TemplateBackend'
