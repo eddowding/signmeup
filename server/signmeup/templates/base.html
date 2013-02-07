@@ -22,6 +22,17 @@
             position:relative;
             z-index:1;
         }
+        heading {
+            position:absolute;
+            width:100%;
+            top:0;
+            left:0;
+            z-index:2;
+            padding:0;
+            background-color:rgba(255,255,255,0.9);
+            border-bottom:1px solid;
+        }
+        
         .box {
             position:absolute;
             z-index:9999;
@@ -32,13 +43,13 @@
             margin:1em;
         }
         #content { 
-            width:20%;
-            top:0;
+            width:30%;
+            top:5em;
             left:0;
         }
         #infobox { 
-            width:20%;
-            top:0;
+            width:30%;
+            top:5em;
             right:0;
             display:none;
         }
@@ -72,7 +83,11 @@
         </style>
     </head>
     <body id={% block body_id %}{% endblock body_id %}>
-        <navigation id="menu"></navigation>
+        <heading>
+            <h1>I Want Better Food</h1>
+            <nav id="menu"></nav>
+        </heading>
+
         <article id="map" class="grayscale"></article>
         <article id="content" class="box"></article>
         <article id="infobox" class="box"></article>
