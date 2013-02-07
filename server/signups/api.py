@@ -1,5 +1,7 @@
 from tastypie_mongoengine import resources
 from tastypie.authorization import Authorization
+from tastypie.cache import SimpleCache
+
 from models import SignUp
 
 class SignUpResource(resources.MongoEngineResource):
@@ -10,6 +12,7 @@ class SignUpResource(resources.MongoEngineResource):
         filtering = {
             'location': resources.QUERY_TERMS_ALL
         }
+        cache = SimpleCache()
     
     def dehydrate_email(self, bundle):
            return None
