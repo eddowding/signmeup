@@ -1,7 +1,7 @@
 L.TileLayer.OS = L.TileLayer.WMS.extend({
 
     defaultWmsParams: {
-        SERVICE: 'WMS',
+        SERVICE: 'WMTS',
         REQUEST: 'GetMap',
         VERSION: '1.1.1',
         FORMAT: 'image/png'

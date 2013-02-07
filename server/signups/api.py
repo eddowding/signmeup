@@ -13,16 +13,16 @@ class SignUpResource(resources.MongoEngineResource):
     
     def dehydrate_email(self, bundle):
            return None
-
+    
     def dehydrate_name(self, bundle):
            return None
     
     def build_filters(self, filters=None):
         if filters is None:
             filters = {}
-            
+        
         orm_filters = super(SignUpResource, self).build_filters(filters)
-    
+        
         if "within_distance" in filters:
             points = filters['within_distance'].split(',')
             points = map(float, points)
@@ -30,8 +30,8 @@ class SignUpResource(resources.MongoEngineResource):
                 (points[0],points[1]),
                 5
             ]
-
+            
             orm_filters["location__within_distance"] = distance
-    
+        
         return orm_filters
            

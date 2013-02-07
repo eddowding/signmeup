@@ -40,6 +40,7 @@ define([
                     signup.set({postcode: postcode})
                     signup.save(signup.attributes, {
                         success: function() {
+                            App.vent.trigger("map:add_marker", signup)
                             App.Router.navigate('thanks/',  {trigger: true} )
                         }
                     })

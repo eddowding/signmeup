@@ -49,6 +49,9 @@ define([
     App.vent.on("map:panto", function(latlng) {
         App.map.panTo(latlng);
     })
+    App.vent.on("map:add_marker", function(signup) {
+        App.map.showMarker(signup);
+    })
     
     App.vent.on("postcodeform:submit", function(postcode){
         App.Router.navigate('postcode/' + postcode + '/',  {trigger: true} )

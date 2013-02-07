@@ -23,18 +23,24 @@ define([
 
             return this.render();
         },
-        showMarkers: function() {
+        showMarker: function(signup) {
             var map = this.map;
             var icon = this.iconClass;
-            var bounds = map.getCenter()
+            var location = signup.location || signup.get('location');
+            if (location != undefined) {
+                L.marker(location, {icon:icon}).addTo(map);
+            }
+        },
+        showMarkers: function() {
+            var view = this;
+
+            var bounds = view.map.getCenter();
             this.collection.bounds_str = bounds.lat + ',' + bounds.lng
             this.collection.fetch({
                 success: function(collection) {
                     var objects = collection.models[0].get('objects');
                     _.each(objects, function(signup) {
-                        if (signup.location != undefined) {
-                            L.marker(signup.location, {icon:icon}).addTo(map);
-                        }
+                        view.showMarker(signup);
                     })
                 }
             })
