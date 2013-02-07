@@ -1,0 +1,1 @@
+(function(){Backbone.History.prototype.loadUrl=function(e){var t=this.fragment=this.getFragment(e),n=_.any(this.handlers,function(e){if(e.route.test(t))return e.callback(t),!0});return/^\//.test(t)||(t="/"+t),window._gaq!==undefined&&window._gaq.push(["_trackPageview",t]),n}}).call(this);
