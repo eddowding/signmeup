@@ -1,7 +1,8 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-from tastypie.api import Api
+from django.views.generic import TemplateView
 
+from tastypie.api import Api
 
 from signups.api import SignUpResource
 from localinfo.api import LocalInfoResource
@@ -30,6 +31,6 @@ urlpatterns += patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-    url(r'', include('signups.urls')),
+    url(r'', TemplateView.as_view(template_name="base.html")),
 )
 
