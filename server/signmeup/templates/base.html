@@ -19,7 +19,6 @@
         <style>
         html, body, #map {
             height:100%;
-            width:100%;
             position:relative;
             z-index:1;
         }
@@ -52,6 +51,24 @@
             -ms-filter: grayscale(80%);
             -o-filter: grayscale(80%);
         }
+        
+        @media (max-width: 767px) {
+            #content, #infobox {
+                width:85%;
+                position:relative;
+                float:left;
+                padding-right:1em;
+            }
+            #map {
+                position:absolute;
+                left:0;
+                width:100%;
+                margin:0;
+                padding:0;
+            }
+        }
+        
+        
         </style>
     </head>
     <body id={% block body_id %}{% endblock body_id %}>
