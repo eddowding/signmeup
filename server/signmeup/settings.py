@@ -179,3 +179,10 @@ CACHES = {
 }
 
 TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django.TemplateBackend'
+
+
+try:
+    from local_settings import *
+except:
+    print "You may want to make a local_settings.py file."    
+

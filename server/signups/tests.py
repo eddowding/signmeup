@@ -1,12 +1,10 @@
 from django.test import TestCase
-# from django.core import mail
-
 from django.test.utils import override_settings
 
 from tastypie.test import ResourceTestCase
 
 from models import SignUp
-import forms
+from localinfo.models import LocalInfo
 
 class SimpleTest(TestCase):
     def setUp(self):
@@ -27,27 +25,7 @@ class SimpleTest(TestCase):
     def test_form(self):
         pass
         # print forms.SignupForm()
-
-    def test_form_save(self):
-        f1 = forms.SignupForm({'name' : 'sym', 'email' : 'a@b.com',})
-        f2 = forms.SignupForm({'name' : 'sym', 'email' : 'a@b.com', 'postcode' : 'foo'})
-
-        self.assertFalse(f1.is_valid())
-        self.assertRaises(ValueError, f1.save)
-        self.assertTrue(f2.save)
-
         
-    def test_token(self):
-        f = forms.SignupForm(instance=self.u)
-        f.model_token(1)
-        
-    def test_form_save_true(self):
-        f = forms.SignupForm({
-            'name' : 'sym', 
-            'email' : 'a@b.com', 
-            'postcode' : 'SE22 8DJ'
-            })
-        f.save()
     
     def test_create_view(self):
         self.client.get('/')
@@ -60,9 +38,12 @@ class APITests(ResourceTestCase):
         data = {
             'name' : 'sym',
             'email' : 'sym.roe@talusdesign.co.uk',
-            'postcode' : 'SE22 8DJ'
+            'postcode' : 'SE22 8DJ',
+            'local_food' : True
         }
         
+        info_model, created = LocalInfo.objects.get_or_create(type='country', name='UK')
+        self.assertEqual(info_model.info, {})
         self.assertEqual(SignUp.objects.count(), 0)
         req = self.api_client.post(
             '/api/v1/signup/', 
@@ -72,8 +53,14 @@ class APITests(ResourceTestCase):
         self.assertHttpCreated(req)
         # Verify a new one has been added.
         self.assertEqual(SignUp.objects.count(), 1)
-    
-
-
+        print 
+        print 
+        print 
+        info_model = LocalInfo.objects.get(type='country', name='UK')
+        print info_model.info
         
-    
+        self.assertEqual(info_model.info, {u'local_food': 1})
+        print 
+        print 
+        print 
+

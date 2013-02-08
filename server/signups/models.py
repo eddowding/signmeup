@@ -47,7 +47,6 @@ class SignUp(Document):
                 count = area.info.get(key, 0) + 1
                 area.info[key] = count
         area.save()
-        
-
+        print area.info
         
         return m

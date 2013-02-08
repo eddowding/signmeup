@@ -6,6 +6,7 @@ from models import SignUp
 
 class SignUpResource(resources.MongoEngineResource):
     class Meta:
+        app_label = "test"
         queryset = SignUp.objects.all()
         allowed_methods = ('get','post')
         authorization = Authorization()
