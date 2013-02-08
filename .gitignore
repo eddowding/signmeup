@@ -2,3 +2,4 @@
 *.DS_Store
 /env
 server/db.sqlite
+/server/signmeup/local_settings.py
