@@ -1,6 +1,9 @@
 from django.conf.urls.defaults import url
+
 from tastypie_mongoengine import resources
 from tastypie.authorization import Authorization
+from tastypie import fields
+
 from models import LocalInfo
 
 class LocalInfoResource(resources.MongoEngineResource):
@@ -12,7 +15,9 @@ class LocalInfoResource(resources.MongoEngineResource):
             'type' : resources.QUERY_TERMS_ALL,
             'name' : resources.QUERY_TERMS_ALL,
         }
-
+        
+    id = fields.CharField(attribute='name')
+        
     def override_urls(self):
             return [
                 url(r"^(?P<resource_name>%s)/(?P<name>[\w\d_.-]+)/$" % 

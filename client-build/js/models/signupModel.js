@@ -1,0 +1,1 @@
+define(["app","backbone"],function(e,t){return t.Model.extend({url:function(){var e="/api/v1/signup/";return this.id?e+this.id+"":e}})});

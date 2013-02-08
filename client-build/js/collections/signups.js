@@ -1,0 +1,1 @@
+define(["backbone","models/signupModel"],function(e,t){return e.Collection.extend({url:function(){return url="/api/v1/signup/?limit=0",this.bounds_str!=undefined&&(url+="&within_distance="+this.bounds_str),url},model:t})});

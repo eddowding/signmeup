@@ -1,0 +1,4 @@
+{% block subject %}Subject{% endblock %}
+{% block plain %}
+Email body here
+{% endblock %}

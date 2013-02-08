@@ -1,0 +1,10 @@
+description "I Want Better Food"
+
+start on (net-device-up
+          and local-filesystems
+          and runlevel [2345])
+stop on runlevel [016]
+
+respawn
+
+exec /var/www/signmeup/config/gunicorn.sh

@@ -17,11 +17,31 @@
         <link rel="stylesheet" href="{% static "css/bootstrap-responsive.min.css" %}" type="text/css">
         {# <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen"> #}
         <style>
-        html, body, #map {
+        html, body {
             height:100%;
-            width:100%;
+        }
+        #map {
+            height:100%;
             position:relative;
             z-index:1;
+        }
+        body > header {
+            padding:0 1.3em;
+        }
+        header {
+/*            position:absolute;*/
+            width:100%;
+            display:block;
+            top:0;
+            left:0;
+            z-index:2;
+            padding:0;
+            margin:0;
+            background-color:rgba(255,255,255,0.9);
+            border-bottom:1px solid;
+        }
+        article {
+            margin-top:4em;
         }
         .box {
             position:absolute;
@@ -29,22 +49,21 @@
             background-color:rgba(255,255,255,0.9);
             border:1px solid;
             border-color:rgba(0,0,0,0.5);
-            padding:1em;
             margin:1em;
         }
         #content { 
-            width:20%;
-            top:0;
+            width:30%;
+            top:5em;
             left:0;
         }
         #infobox { 
-            width:20%;
-            top:0;
+            width:30%;
+            top:5em;
             right:0;
             display:none;
         }
         
-        .grayscale {
+        .grayscale .leaflet-layer {
             filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
             filter: grayscale(80%);
             -webkit-filter: grayscale(80%);
@@ -52,62 +71,102 @@
             -ms-filter: grayscale(80%);
             -o-filter: grayscale(80%);
         }
+        
+        @media (max-width: 767px) {
+            #content, #infobox {
+                width:85%;
+                position:relative;
+                float:left;
+                padding-right:1em;
+            }
+            header {
+                margin:auto;
+                text-align:center;
+            }
+            #map {
+                position:absolute;
+                left:0;
+                width:100%;
+                margin:0;
+                padding:0;
+            }
+        }
         </style>
     </head>
     <body id={% block body_id %}{% endblock body_id %}>
-        <navigation id="menu"></navigation>
-        <article id="map" class="grayscale"></article>
-        <article id="content" class="box"></article>
-        <article id="infobox" class="box"></article>
+        <header>
+            <h1>I Want Better Food</h1>
+            <nav id="menu">
+                <ul>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="map" class="grayscale"></section>
+        <section id="content" class="box"></section>
+        <section id="infobox" class="box"></section>
 
         <script id="postcodeForm" type="text/template">
-        <form>
-        <label for=postcode>Postcode</label>
-        <input type=postcode name=postcode id=postcode></input>
-        <button type=submit>Find</button>
-        </form>
+        <header>
+            <h2>Want better food?</h2>
+        </header>
+        <article>
+            <form>
+            <label for=postcode>Postcode</label>
+            <input type=postcode name=postcode id=postcode></input>
+            <button type=submit>Find</button>
+            </form>
+        </article>
         </script>
 
         <script id="postcodeView" type="text/template">
-        <h1>If we want better food, we have to ask for it.</h1>
-        <h1><%= friendlyName%></h1>
-        <h1><%= postcode %></h1>
-        <form>
-        <label for="name">Name<input type=text name=name id=name value="asd"></label>
-        <label for="email">Email<input type=email name=email id=email value="asd@foo.com"></label>
-        <label for="local_food">Local Food <input type=checkbox name=local_food id=local_food></label>
-
-        <button type=submit></button>
-        </form>
+        <header>
+            <h1>If we want better food, we have to ask for it.</h1>        
+        </header>
+        <article>
+            <form>
+                <label for="name">Name<input type=text name=name id=name value=""></label>
+                <label for="email">Email<input type=email name=email id=email value=""></label>
+                <label for="local_food">Local Food <input type=checkbox name=local_food id=local_food></label>
+                <button type=submit></button>
+            </form>
+        </article>
         </script>
 
         <script id="infoboxView" type="text/template">
-        <h1>The story so far&hellip;</h1>
-        <dl>
-            <dt>Local Food</dt>
-            <dd><%= info.local_food %></dd>
-        </dl>
+        <header>
+            <h1>The story so far&hellip;</h1>
+        </header>
+        <article>
+            <dl>
+                <dt>Local Food</dt>
+                <dd><%= info.local_food %></dd>
+            </dl>
+        </article>
         </script>
         
         <script id="thankyouView" type="text/template">
-        <h1>Hey, thanks!</h1>
-        <h1 style="font-size: 15em;line-height: 1em;" align=center>☕</h1>
+        <header>
+            <h1>Hey, thanks!</h1>
+        </header>
+        <article>
+        <p>The more people who ask for better food, the quicker we’ll get it.</p>
+        <p>Tell your friends.</p>
+        </article>
         </script>
+
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-36053724-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
         
-         
-        
-        {# <script type="text/javascript"> #}
-        {#   var _gaq = _gaq || []; #}
-        {#   _gaq.push(['_setAccount', 'UA-36053724-1']); #}
-        {#   _gaq.push(['_trackPageview']); #}
-        {#   (function() { #}
-        {#     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; #}
-        {#     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; #}
-        {#     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); #}
-        {#   })(); #}
-        {#  #}
-        {# </script> #}
-        
+        </script>
         
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.css" />
         <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" /><![endif]-->

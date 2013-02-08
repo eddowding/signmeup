@@ -23,26 +23,32 @@ define([
 
             return this.render();
         },
-        showMarkers: function() {
+        showMarker: function(signup) {
             var map = this.map;
             var icon = this.iconClass;
-            var bounds = map.getCenter()
+            var location = signup.location || signup.get('location');
+            if (location != undefined) {
+                L.marker(location, {icon:icon}).addTo(map);
+            }
+        },
+        showMarkers: function() {
+            var view = this;
+
+            var bounds = view.map.getCenter();
             this.collection.bounds_str = bounds.lat + ',' + bounds.lng
             this.collection.fetch({
                 success: function(collection) {
                     var objects = collection.models[0].get('objects');
                     _.each(objects, function(signup) {
-                        if (signup.location != undefined) {
-                            L.marker(signup.location, {icon:icon}).addTo(map);
-                        }
+                        view.showMarker(signup);
                     })
                 }
             })
         },
         fixLatLng: function(latlng) {
             var newlat, newlon, lat_shiftamount, lon_shiftamount;
-            lat_shiftamount = 0.009;
-            lon_shiftamount = 0.002;
+            lat_shiftamount = 0.000;
+            lon_shiftamount = 0.000;
             var lat = latlng[0];
             var lon = latlng[1];
             if (lat > 0) {
@@ -67,7 +73,7 @@ define([
             
             var osgbTransform = new L.Transformation(1, 0, -1, 0);
             var osgbCrs = L.CRS.proj4js('EPSG:27700', 
-            "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs", 
+            "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-97910 +ellps=airy +datum=OSGB36 +units=m +no_defs", 
             osgbTransform);
 
             var scaleFn = function(zoom) {

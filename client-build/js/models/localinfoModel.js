@@ -1,0 +1,1 @@
+define(["app","backbone"],function(e,t){return t.Model.extend({url:function(){return"/api/v1/localinfo/"+this.get("id")+"/"},defaults:{info:{local_food:0}}})});

@@ -49,6 +49,9 @@ define([
     App.vent.on("map:panto", function(latlng) {
         App.map.panTo(latlng);
     })
+    App.vent.on("map:add_marker", function(signup) {
+        App.map.showMarker(signup);
+    })
     
     App.vent.on("postcodeform:submit", function(postcode){
         App.Router.navigate('postcode/' + postcode + '/',  {trigger: true} )
@@ -61,14 +64,18 @@ define([
         ], function(infoboxView, localinfoModel){
             // var info_model = new localinfoModel({ward: id});
             // Just show all of thr UK for now:
-            var info_model = new localinfoModel({id: 'UK'});
-            var view = new infoboxView({model: info_model});
-            info_model.fetch({
-                success: function() {
-                    App.regionInfobox.show(view)
-                    App.regionInfobox.$el.slideDown()
-                }
-            });
+            if (App.info_model == undefined) {
+                App.info_model = new localinfoModel({id: 'UK'});
+                var view = new infoboxView({model: App.info_model});
+                App.info_model.fetch({
+                    success: function() {
+                        App.regionInfobox.show(view)
+                        App.regionInfobox.$el.slideDown()
+                    }
+                });
+            } else {
+                App.regionInfobox.currentView.model.fetch()
+            }
         
         });
         

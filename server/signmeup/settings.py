@@ -161,11 +161,7 @@ LOGGING = {
 }
 
 EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
-
 CELERY_EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-
-
 BROKER_URL = 'redis://localhost:6379/0'
 
 MONGO_DATABASE_NAME = 'database'
@@ -174,3 +170,19 @@ import mongoengine
 mongoengine.connect('signups')
 
 TEST_RUNNER = 'mongo_tester.MongoTestRunner'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django.TemplateBackend'
+
+
+try:
+    from local_settings import *
+except:
+    print "You may want to make a local_settings.py file."    
+

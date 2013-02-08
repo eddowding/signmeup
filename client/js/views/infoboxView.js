@@ -5,5 +5,8 @@ define([
 ], function(App, Backbone, Marionette) {
     return Backbone.Marionette.ItemView.extend({
         template: '#infoboxView',
+        modelEvents: {
+            "change": "render"
+          },
     });
 });
