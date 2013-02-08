@@ -20,6 +20,7 @@ urlpatterns = patterns('',
 urlpatterns += patterns('',
     # API
     (r'^api/', include(v1_api.urls)),
+    (r'', include('signups.urls')),
 
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     url(r'', TemplateView.as_view(template_name="base.html")),

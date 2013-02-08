@@ -23,7 +23,6 @@ define([
     
     App.addInitializer(function(options) {
         Backbone.history.start({
-            pushState: true,
             root: App.root
         });
     })

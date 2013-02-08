@@ -8,7 +8,8 @@ require.config({
         'backbone': {
             deps: [
                 'underscore',
-                'jquery'
+                'jquery',
+                'modernizr'
             ],
             exports: 'Backbone'
         },
@@ -49,7 +50,8 @@ require.config({
         'proj4js': 'lib/proj4js-compressed',
         'proj4leaflet': 'lib/proj4leaflet',
         'jspostcode': 'lib/jspostcode',
-        'jquery.validate': 'lib/jquery.validate.min'
+        'jquery.validate': 'lib/jquery.validate.min',
+        'modernizr': 'lib/modernizr'
         
     }
 });

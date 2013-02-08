@@ -29,7 +29,9 @@ class SimpleTest(TestCase):
     
     def test_create_view(self):
         self.client.get('/')
-
+    
+    def test_token(self):
+        self.assertTrue(self.u.generate_token())
 
 class APITests(ResourceTestCase):
     
@@ -53,14 +55,7 @@ class APITests(ResourceTestCase):
         self.assertHttpCreated(req)
         # Verify a new one has been added.
         self.assertEqual(SignUp.objects.count(), 1)
-        print 
-        print 
-        print 
         info_model = LocalInfo.objects.get(type='country', name='UK')
-        print info_model.info
-        
         self.assertEqual(info_model.info, {u'local_food': 1})
-        print 
-        print 
-        print 
+
 
