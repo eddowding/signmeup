@@ -22,8 +22,10 @@ define([
     App.root = '/';
     
     App.addInitializer(function(options) {
+        var enablePushState = true;
+        var pushState = !!(enablePushState && window.history && window.history.pushState);
         Backbone.history.start({
-            pushState: true,
+            pushState: pushState,
             root: App.root
         });
     })

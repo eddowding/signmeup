@@ -8,6 +8,7 @@ define([
                 ''                           : 'home',
                 'postcode/:postcode/'        : 'postcode',
                 'thanks/'                     : 'thanks',
+                'share/'                     : 'share',
             },
             home: function() {
                 require([
@@ -41,6 +42,16 @@ define([
                     ], function(thankyouView){
                         App.vent.trigger('infobox:show')
                         var view = new thankyouView();
+                            App.regionMain.show(view)
+                        });
+                
+            },
+            share: function() {
+                    require([
+                        'views/shareView',
+                    ], function(shareView){
+                        App.vent.trigger('infobox:show')
+                        var view = new shareView();
                             App.regionMain.show(view)
                         });
                 
