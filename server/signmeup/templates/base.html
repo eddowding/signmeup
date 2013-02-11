@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
         <link rel="stylesheet" href="{% static "css/iwbf.css" %}" type="text/css">
         
-        
+        <link rel="icon" type="image/png" href="{% static "images/favicon.png" %}"  />
 
     </head>
     <body id={% block body_id %}{% endblock body_id %}>
@@ -120,12 +120,8 @@
           So let's get started.</h2>
           <h2 style="color: #fff; margin-top: 10px;">What's your postcode?</h2>
           </label>
-          <input type="postcode" class="span2" style="font-size: 18px;
-padding: 8px 5px 5px 5px;
-margin: 0;
-line-height: 1;
-width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">  
-          <button type=submit class="btn btn-inverse btn-large">Find <i class="icon-circle-arrow-right icon-large muted"></i></button>
+          <input type="postcode" class="postcode" name="postcode" id="postcode"  placeholder="Postcode" onmouseup="javacript:$(this).addClass('caps');">   
+          <button type=submit class="btn btn-inverse btn-large">Find </button>
         </form> 
             </td>
           </tr>
@@ -134,7 +130,7 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
          
        
         
-          <p style="margin:0;"><span class="label label-warning">NB</span> We will never reveal your personal details. <a href="#" >More &raquo;</a> </p>
+          <p style="margin:0;"><span class="label label-warning">NB</span> We will never reveal your details. <a href="#" >More &raquo;</a> </p>
         </article>
         </script>
 
@@ -227,6 +223,7 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
             <tr>
             <td style="background: #66B330; color: #fff;border: 1px solid white; text-align: center;">
                 <label for="email"><input type=email name=email id=email value="" placeholder="Email" style="width:90%;"></label>             
+                <label for="name"><input type=name name=name id=name value="" placeholder="remove me" style="width:90%;"></label>             
                 
                 <label class="checkbox"><input type="checkbox" checked="checked" id="consent" name="consent">Please let me know how I can help locally, eg crowdfunding for local food businesses.</label>
 
@@ -277,7 +274,7 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
                             
           <tr>
             <td class="how_1 number">
-               <%= info.csa %>              
+               <%= info.csa %>             
             </td>  
             <td class="how">
                CSA
@@ -295,7 +292,7 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
                                     
           <tr>
             <td class="how_1 number">
-               <%= info.food_bank %> 0             
+               <%= info.food_bank %> 
             </td>  
             <td class="how">
                Food Bank
@@ -337,7 +334,7 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
                     
         <table class="table" style="margin:0;" >
             <tr>
-            <td style="background: #000; color: #fff; border-bottom: 3px solid white; padding-bottom: 1px;" >
+            <td colspan="2" style="background: #000; color: #fff; border-bottom: 3px solid white; padding-bottom: 1px;" >
               <h1 style="margin: 5px 0 0 0; text-align: center; font-weight: normal;">Thank you!</h1> 
             </td>
             </tr>
@@ -345,29 +342,30 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
                        
           <tr>
             
-            <td style="background: #E26220; color: #fff;border-bottom: 2px solid white;">
+            <td colspan="2" style="background: #E26220; color: #fff;border-bottom: 2px solid white;">
             
-              <h2 style="text-align: center;">More people = quicker change.</h2>
+              <h2 style="text-align: center;">So, what next?</h2>
             </td>
           </td>
 </tr>
           <tr>          
-          <td style="background: #E54137; color: #fff;border-bottom: 2px solid white;  "> 
-            <h2>So please be wonderful and share this with your friends?<i class="icon-circle-arrow-down pull-right" style="color: rgba(255,255,255,0.4);"></i></h2>
+           <td style="background: #E54137; color: #fff;border-bottom: 2px solid white;  ">
+            <h2>#1</h2>
+           </td>
+           <td style="background: #E54137; color: #fff;border-bottom: 2px solid white;  "> 
+            <h2>More people = quicker! </h2>
+            <p>So please share this with your friends (tools top right)! </p>
 
             </td>
             </tr>
             <tr> 
+             <td style="background: #A2001A; color: #fff;border-bottom: 2px solid white;  ">
+            <h2>#3</h2>
+              </td>
+              <td>
+              
+              </td>
             
-            <td style="background: #66B330; color: #fff;border-bottom: 2px solid white;  ">
-              <span class='st_sharethis_vcount' displayText='ShareThis'></span>
-              <span class='st_facebook_vcount' displayText='Facebook'></span>
-              <span class='st_twitter_vcount' displayText='Tweet'></span>
-              <span class='st_linkedin_vcount' displayText='LinkedIn'></span>
-              <span class='st_googleplus_vcount' displayText='Google +'></span>
-              <span class='st_pinterest_vcount' displayText='Pinterest'></span>
-              <span class='st_email_vcount' displayText='Email'></span>
-            </td>
             </tr> 
           </table> 
  
@@ -391,9 +389,12 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
         </script>
 
         <script type="text/javascript">
+        
           var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-36053724-1']);
+          _gaq.push(['_setAccount', 'UA-3315919-36']);
+          _gaq.push(['_setDomainName', 'iwantbetterfood.com']);
           _gaq.push(['_trackPageview']);
+        
           (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';

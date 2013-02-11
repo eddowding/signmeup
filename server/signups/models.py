@@ -11,13 +11,29 @@ from localinfo.models import LocalInfo
 
 class SignUp(Document):
     
-    COLLECT = (
-        'local_food',
-        'open_late',
+    COLLECT = (  
+      'independent_biz',
+      'veg_box',
+      'group_buying',
+      'csa',
+      'supermarkets',
+      'food_bank',
+      'home_delivery',
+      'longer_opening',
+      'reduced_waste',
+      'less_packaging',
+      'work_food',
+      'local_food',
+      'seasonal_food',
+      'organic_food',
+      'ethnic_food',
+      'cheaper_food',
+      'branded_food',
+      'healthy_ready_meals'
     )
     
     # Basic info
-    name = fields.StringField(required=True)
+    name = fields.StringField(required=False)
     email = fields.EmailField(required=True)
     postcode = fields.StringField(required=True, name="Postcode", default="")
     location = fields.GeoPointField()
@@ -26,7 +42,23 @@ class SignUp(Document):
     
     # Checkboxes
     local_food = fields.BooleanField(verbose_name="Local Food")
-    open_late = fields.BooleanField(verbose_name="Late opening")
+    independent_biz = fields.BooleanField(verbose_name="Independent business")
+    group_buying = fields.BooleanField(verbose_name="Group buying")
+    supermarkets = fields.BooleanField(verbose_name="Supermarkets")
+    food_bank = fields.BooleanField(verbose_name="Food bank")
+    home_delivery = fields.BooleanField(verbose_name="Home delivery")
+    csa = fields.BooleanField(verbose_name="CSA")
+    veg_box = fields.BooleanField(verbose_name="Veg box")
+    longer_opening = fields.BooleanField(verbose_name="Longer opening")
+    reduced_waste = fields.BooleanField(verbose_name="Reduced waste")
+    less_packaging = fields.BooleanField(verbose_name="Less packaging")
+    work_food = fields.BooleanField(verbose_name="Better food at work")
+    seasonal_food = fields.BooleanField(verbose_name="Seasonal food")
+    organic_food = fields.BooleanField(verbose_name="Organic food")
+    ethnic_food = fields.BooleanField(verbose_name="Ethnic food")
+    cheaper_food = fields.BooleanField(verbose_name="Cheaper food")
+    branded_food = fields.BooleanField(verbose_name="Branded food")
+    healthy_ready_meals = fields.BooleanField(verbose_name="Healthy ready meals")
     
     token = fields.StringField()
     confirmed = fields.BooleanField(default=False)

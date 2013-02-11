@@ -78,7 +78,6 @@ body > header {
     margin:1em;
     padding: 2px;
     border: 4px solid white;
-    overflow:auto;
 }
 #content { 
     width:30%;
@@ -204,17 +203,31 @@ article {
 .number { 
   padding: 0 3px;
   font-size: 15px;
-  float: right;
+  float: right;  
+  font-weight: bold;
 }
 
 .tooltip {
   font-size: 14px;
   color: #fff;
-  width: 200px;  
+  width: 200px !important;
+  z-index: 15000;  
 }
 
 .table-condensed td {
-  padding: 3px 0 0 4px; 
+  padding: 3px 4px 0 4px; 
+}
+
+.postcode {
+  font-size: 18px;
+  padding: 8px 5px 5px 5px;
+  margin: 0;
+  line-height: 1;
+  width: 140px;
+}
+
+.caps {
+  text-transform: uppercase;
 }
 
 .grayscale .leaflet-layer {
@@ -229,7 +242,7 @@ article {
 form { margin: 0;}
       
 .list_options {
- margin: 0 0 0 0;
+ margin: 0 0 0 0; 
  }
  
 .help-block {
