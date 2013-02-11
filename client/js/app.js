@@ -29,9 +29,11 @@ define([
     })
     
     App.addInitializer(function(options) {
-        $('.pop').popover('toggle')
-    })
-    
+        $('body').tooltip({
+            selector: '.pop'
+        });
+    });
+        
     App.addInitializer(function(options) {
         
         require([
