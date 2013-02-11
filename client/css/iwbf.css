@@ -131,10 +131,44 @@ article {
     left:0;
 }
 #infobox { 
-    width:30%;
+    width:15%;
+    min-width: 120px;
     top:5em;
     right:0;
-    display:none;
+    display:none;    
+    font-family: TradeGothicStdCnd;
+    font-size: 18px;
+    font-weight: normal; 
+}
+
+.how {
+  background: rgba(226,98,32,0.6); 
+  color: #fff;
+}
+
+.how_1 {
+  background: rgba(226,98,32,1); 
+  color: #fff;
+}
+
+.what {
+  background: rgba(226,98,32,0.6); 
+  color: #fff;
+}
+
+.who {
+  background: rgba(226,98,32,0.6); 
+  color: #fff;
+}
+
+.number {
+  font-family: TradeGothicBldCnd;
+  padding: 0 3px;
+  font-size: 18px;
+}
+
+.table-condensed td {
+  padding: 3px 0 0 4px; 
 }
 
 .grayscale .leaflet-layer {

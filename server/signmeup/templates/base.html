@@ -161,8 +161,9 @@
             </tr>
             
             <tr> 
-              <td style="background: #E54137; color: #fff;border-bottom: 1px solid #E87774; padding: 8px 5px 0px 5px;">
-                <h2 style="font-size:18px;color: rgba(255,255,255,0.7);">
+              <td style="background: #E54137; color: #fff;border-bottom: 1px solid #E87774; padding: 8px 5px 0px 5px;"> 
+                 <h2 style="font-size:18px;color: rgba(255,255,255,0.7);">
+
                 <i class="icon-circle-arrow-down pull-right" style="color: rgba(255,255,255,0.4);"></i>
                 WHAT WE BUY</h2> 
 
@@ -183,6 +184,21 @@
             </td>
             </tr>
            
+           <tr>
+           <td style="background: #A2001A; color: #fff;border-bottom: 1px solid #B84F61; padding: 8px 5px 0px 5px;">
+            <h2 style="font-size:18px;color: rgba(255,255,255,0.7);">
+                <i class="icon-circle-arrow-down pull-right" style="color: rgba(255,255,255,0.4);"></i>
+                WHAT I WANT TO EAT</h2> 
+              </td>
+            </tr>
+            
+            
+            <tr> 
+            <td style="background: #A2001A; color: #fff;border-bottom: 2px solid white;  ">
+              <label class="checkbox list_options"><input type="checkbox" id="local_food" name="local_food">Local Food</label>
+              </td> 
+           </tr>
+           
            
             <tr>
             <td style="background: #66B330; color: #fff;border: 1px solid white; text-align: center;">
@@ -200,14 +216,58 @@
         </script>
 
         <script id="infoboxView" type="text/template">
-        <header>
-            <h1>The story so far&hellip;</h1>
-        </header>
-        <article>
-            <dl>
-                <dt>Local Food</dt>
-                <dd><%= info.local_food %></dd>
-            </dl>
+          <article> 
+            
+                <h2 style="margin: 5px 0 0 0; text-align: center; font-weight: normal; font-size: 20px; color: #444;">The story so far&hellip;</h2> 
+                
+           <table class="table table-condensed" style="margin:0;" >
+                                  
+          <tr>
+            <td class="how_1 number">
+               <%= info.local_food %>              
+            </td>  
+            <td class="how">
+               Locally sourced
+            </td>
+          </tr>                
+                                    
+          <tr>
+            <td class="how_1 number">
+               <%= info.local_food %>              
+            </td>  
+            <td class="how">
+               Locally sourced
+            </td>
+          </tr>                
+                                    
+          <tr>
+            <td class="how_1 number">
+               <%= info.local_food %>              
+            </td>  
+            <td class="how">
+               Locally sourced
+            </td>
+          </tr>                
+           
+          <tr>          
+          <td colspan="2" style="background: #E54137; color: #fff;border-bottom: 2px solid white;  "> 
+            
+            </td>
+            </tr>
+            <tr> 
+            
+            <td colspan="2" style="background: #66B330; color: #fff;border-bottom: 2px solid white;  ">
+              sdf
+            </td>
+            </tr> 
+          </table> 
+ 
+
+            
+            
+            
+            
+            
         </article>
         </script>
         
