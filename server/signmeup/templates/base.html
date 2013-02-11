@@ -55,12 +55,9 @@
         </section>
         <footer class="navbar navbar-fixed-bottom">
             Sponsors 
-            <a href="http://buckybox.com" target="_blank"><img src="{% static "images/buckybox.png" %}"  alt="BuckyBox" /></a>
-            
-
             <a href="http://foodtrade.com" target="_blank"><img src="{% static "images/foodtrade.png" %}" alt="FoodTrade" /></a>
-            
             <a href="http://www.geovation.org.uk/" target="_blank"><img  src="{% static "images/geovation.png" %}" alt="Geovation" /></a>
+            <a href="http://buckybox.com" target="_blank"><img src="{% static "images/buckybox.png" %}"  alt="BuckyBox" /></a>
             
             
             <nav id="menu" class="pull-right">
@@ -222,9 +219,7 @@
            
             <tr>
             <td style="background: #66B330; color: #fff;border: 1px solid white; text-align: center;">
-                <label for="email"><input type=email name=email id=email value="" placeholder="Email" style="width:90%;"></label>             
-                <label for="name"><input type=name name=name id=name value="" placeholder="remove me" style="width:90%;"></label>             
-                
+                <label for="email"><input type=email name=email id=email value="" placeholder="Email" style="width:90%;"></label>                             
                 <label class="checkbox"><input type="checkbox" checked="checked" id="consent" name="consent">Please let me know how I can help locally, eg crowdfunding for local food businesses.</label>
 
                <button type="submit" class="btn btn-inverse btn-large">Add my voice</button>    
@@ -291,21 +286,22 @@
           </tr>       
                                     
           <tr>
-            <td class="how_1 number">
+            <td class="how_1 number" >
                <%= info.food_bank %> 
             </td>  
-            <td class="how">
+            <td class="how" style="border-bottom: 1px solid #fff;">
                Food Bank
             </td>
           </tr>          
                            
            
                                 
-          <tr><td class="what_1 number"><%= info.home_delivery %></td><td class="what">Evening / Home delivery</td></tr><tr>
+          <tr>
+            <td class="what_1 number"><%= info.home_delivery %></td><td class="what">Evening / Home delivery</td></tr><tr>
             <td class="what_1 number"><%= info.longer_opening %></td><td class="what">Longer opening</td></tr><tr>
-            <td class="what_1 number"><%= info.reduced_waste %></td><td class="what">Reduced food wastee</td></tr><tr>
+            <td class="what_1 number"><%= info.reduced_waste %></td><td class="what">Reduced food waste</td></tr><tr>
             <td class="what_1 number"><%= info.less_packaging %></td><td class="what">Less packaging</td></tr><tr>
-            <td class="what_1 number"><%= info.work_food %></td><td class="what">Better food at work</td> </tr>
+            <td class="what_1 number"><%= info.work_food %></td><td class="what" style="border-bottom: 1px solid #fff;">Better food at work</td> </tr>
           </tr>     
           
           <tr>
@@ -339,7 +335,7 @@
             </td>
             </tr>
             
-                       
+                   
           <tr>
             
             <td colspan="2" style="background: #E26220; color: #fff;border-bottom: 2px solid white;">
@@ -353,20 +349,30 @@
             <h2>#1</h2>
            </td>
            <td style="background: #E54137; color: #fff;border-bottom: 2px solid white;  "> 
-            <h2>More people = quicker! </h2>
-            <p>So please share this with your friends (tools top right)! </p>
-
+              <h2>Help spread this campaign!</h2>
+              <p style="color: rgba(255,255,255,0.8);">More people = quicker, so please help spread the word by sharing this with your friends - there are links to help you at the top right of the page. </p>
             </td>
             </tr>
             <tr> 
              <td style="background: #A2001A; color: #fff;border-bottom: 2px solid white;  ">
-            <h2>#3</h2>
+              <h2>#2</h2>
               </td>
-              <td>
-              
-              </td>
-            
+             <td style="background: #A2001A; color: #fff;border-bottom: 2px solid white;  ">
+                <h2>Your wallet holds change</h2>
+                <p style="color: rgba(255,255,255,0.8);">Put your money where your mouth is and buy from good businesses, even if it is a little more effort Why? Well, as they say, 'every little helps'. But money spent on good food from local independent businesses <a href="http://www.yesmagazine.org/issues/go-local/the-local-multiplier-effect" target="_blank">goes even further</a>. They typically spend with other local independent businesses, creating livelihoods and a thriving society, right where you live.  </p>
+              </td>            
             </tr> 
+            
+            <tr> 
+             <td style="background: #2C001F; color: #fff;border-bottom: 2px solid white;  ">
+              <h2>#3</h2>
+              </td>
+             <td style="background: #2C001F; color: #fff;border-bottom: 2px solid white;  ">
+                <h2>Check out our supporters</h2>
+                <p style="color: rgba(255,255,255,0.8);">They are all great people doing great things. And they made this possible, too, so they must be great. </p>
+              </td>            
+            </tr> 
+             
           </table> 
  
         

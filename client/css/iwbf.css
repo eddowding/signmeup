@@ -205,6 +205,7 @@ article {
   font-size: 15px;
   float: right;  
   font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
 .tooltip {
@@ -216,6 +217,13 @@ article {
 
 .table-condensed td {
   padding: 3px 4px 0 4px; 
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.table a {
+  color: inherit; 
+  border-bottom: 1px solid;
 }
 
 .postcode {
