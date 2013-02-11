@@ -29,7 +29,14 @@
         <header id="header">
         <div class="row-fluid">
             <div class="span5">
-                <img src="{% static "images/iwbf_logo_new.png" %}" alt="I Want Better Food" />
+              <div style="background:url('{% static "images/iwbf_logo_new.png" %}');
+              background-repeat: none;
+              background-position: center left;
+              display: block;
+              width: 566px;
+              height: 59px;
+              ">
+              </div> 
             </div>
             <div class="span7">
                 <div class="pull-right" style="padding-right: 0px;">
@@ -202,7 +209,7 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
             <tr>
             <td style="background: #66B330; color: #fff;border: 1px solid white; text-align: center;">
                 <label for="email"><input type=email name=email id=email value="" placeholder="Email" style="width:90%;"></label>             
-                <label for="name"><input type=text name=name id=name value="" placeholder="Your name (optional)" style="width:90%;"></label>
+                
                 <label class="checkbox"><input type="checkbox" checked="checked" id="consent" name="consent">Please let me know how I can help locally, eg crowdfunding for local food businesses.</label>
 
                <button type="submit" class="btn btn-inverse btn-large">Add my voice</button>    
