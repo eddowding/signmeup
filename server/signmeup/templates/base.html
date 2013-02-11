@@ -9,7 +9,7 @@
         <meta property="og:title" content="I Want Better Food" />
         <meta property="og:type" content="cause" />
         <meta property="og:url" content="http://iwantbetterfood.com/" />
-        <meta property="og:image" content="" />
+        <meta property="og:image" content="{% static "images/IWANTBETTERFOOD_LOGO_OG.png" %}" />
         <meta property="og:site_name" content="I Want Better Food" />
         <meta property="fb:admins" content="573487029" />
 
@@ -27,13 +27,21 @@
     </head>
     <body id={% block body_id %}{% endblock body_id %}>
         <header id="header">
-            <img src="{% static "images/iwbf_logo.png" %}" alt="I Want Better Food" />
-            <nav id="menu">
-                <ul>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/privacy/">Privacy</a></li> 
-                </ul>
-            </nav>
+        <div class="row-fluid">
+            <div class="span5">
+                <img src="{% static "images/iwbf_logo_new.png" %}" alt="I Want Better Food" />
+            </div>
+            <div class="span7">
+                <div class="pull-right" style="padding-right: 0px;">
+                 <span class='st_sharethis_vcount' displayText='ShareThis'></span>
+                  <span class='st_facebook_vcount' displayText='Facebook'></span>
+                  <span class='st_twitter_vcount' displayText='Tweet'></span>
+                  <span class='st_linkedin_vcount' displayText='LinkedIn'></span>
+                  <span class='st_googleplus_vcount' displayText='Google +'></span>
+                  <span class='st_pinterest_vcount' displayText='Pinterest'></span>
+                </div>
+            </div>
+        </div>
         </header>
 
         <section id="map" class="grayscale"></section>
@@ -427,6 +435,15 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
             <a href="http://foodtrade.com" target="_blank"><img src="{% static "images/foodtrade.png" %}" alt="FoodTrade" /></a>
             
             <a href="http://www.geovation.org.uk/" target="_blank"><img  src="{% static "images/geovation.png" %}" alt="Geovation" /></a>
+            
+            
+            <nav id="menu" class="pull-right">
+                <ul style="list-style: none;">
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/privacy/">Privacy</a></li> 
+                </ul>
+            </nav>
+            
         </footer>
 
         

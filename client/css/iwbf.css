@@ -54,7 +54,7 @@ body > header {
     top:0;
     left:0;
     z-index:2;
-    padding:4px 1em;
+    padding:0;
     background-color:rgba(255,255,255,0.9);
     border-bottom:1px solid;
     border-image: url('../images/footer.jpg') repeat stretch 34%;
@@ -127,7 +127,7 @@ article {
 }
 #content { 
     width:30%;
-    max-width: 275px;
+    max-width: 325px;
     top:5em;
     left:0;
 }
@@ -209,6 +209,18 @@ form { margin: 0;}
   line-height: 1.1;
   display: block;
 } 
+
+
+#header .stButton .stBubble_count {
+  padding-top: 4px;
+  width: 43px;
+  height: 23px;
+}
+
+#header .stButton .stBubble {
+  height: 24px;
+}
+
        
 @media (max-width: 767px) {
             #content, #infobox {
