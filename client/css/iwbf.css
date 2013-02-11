@@ -1,0 +1,183 @@
+@font-face {
+	font-family: 'TradeGothicStd';
+	src: url('../font/TradeGothicLTStd.eot');
+	src: local('☺'), url('../font/TradeGothicLTStd.woff') format('woff'), url('../font/TradeGothicLTStd.ttf') format('truetype'), url('../font/TradeGothicLTStd.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TradeGothicStdCnd';
+	src: url('../font/TradeGothicLTStd-Cn18.eot');
+	src: local('☺'), url('../font/TradeGothicLTStd-Cn18.woff') format('woff'), url('../font/TradeGothicLTStd-Cn18.ttf') format('truetype'), url('../font/TradeGothicLTStd-Cn18.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+ 
+@font-face {
+	font-family: 'TradeGothicBldCnd';
+	src: url('../font/TradeGothicLTStd-BdCn20.eot');
+	src: local('☺'), url('../font/TradeGothicLTStd-BdCn20.woff') format('woff'), url('../font/TradeGothicLTStd-BdCn20.ttf') format('truetype'), url('../font/TradeGothicLTStd-BdCn20.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+ 
+@font-face {
+	font-family: 'TradeGothicLight';
+	src: url('../font/TradeGothicLTStd-Light.eot');
+	src: local('☺'), url('../font/TradeGothicLTStd-Light.woff') format('woff'), url('../font/TradeGothicLTStd-Light.ttf') format('truetype'), url('../font/TradeGothicLTStd-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+         
+ hr {
+  height: 4px;
+  background: url('../images/footer.jpg') no-repeat scroll center;
+  margin: 10px 0;
+}
+
+
+html, body {
+    height:100%;
+}
+#map {
+    height:100%;
+    position:relative;
+    z-index:1;
+}
+body > header {
+    padding:0 1.3em;
+}
+
+#header { 
+    width:100%;
+    top:0;
+    left:0;
+    z-index:2;
+    padding:4px 1em;
+    background-color:rgba(255,255,255,0.9);
+    border-bottom:1px solid;
+    border-image: url('../images/footer.jpg') repeat stretch 34%;
+    border-width: 0 0 2px 0;
+}
+
+footer {
+    position:absolute;
+    width:100%;
+    bottom:0;
+    left:0;
+    z-index:2;
+    padding:0;
+    background-color:rgba(255,255,255,0.9);
+    background: #fafafa;
+    border-top:1px solid;
+    color: #444;
+    padding: 8px;
+    
+    border-image: url('../images/footer.jpg') repeat stretch 34%;
+    border-width: 2px 0 0px 0;
+}
+
+footer a {
+    margin: 0 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: TradeGothicBldCnd;
+}
+
+h2 { 
+  font-size: 26px;
+  color: rgba(255,255,255,0.95);
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  color: #A2001A;
+  border-bottom: 2px solid;
+  padding: 0;
+}
+
+
+
+header nav {
+    position:absolute;
+    z-index:3;
+    right:1em;
+    top:1em;
+}
+header nav li {
+    display:block;
+    float:left;
+    padding:1em;
+}
+article {
+    margin-top:0em;
+}
+.box {
+    position:absolute;
+    z-index:9999; 
+    background: rgba(255,255,255,0.9);
+    margin:1em;
+    padding: 2px;
+    border: 4px solid white;
+}
+#content { 
+    width:30%;
+    top:5em;
+    left:0;
+}
+#infobox { 
+    width:30%;
+    top:5em;
+    right:0;
+    display:none;
+}
+
+.grayscale .leaflet-layer {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: grayscale(80%);
+    -webkit-filter: grayscale(80%);
+    -moz-filter: grayscale(80%);
+    -ms-filter: grayscale(80%);
+    -o-filter: grayscale(80%)
+}
+
+form { margin: 0;}
+      
+.list_options {
+  padding-right: 1%;
+  font-weight: bold;
+  margin-bottom: 0.7em;
+ }
+ 
+.help-block {
+  margin-top: 0 !important;
+  color: rgba(255,255,255,0.6);
+  font-weight: normal;
+  line-height: 1.1;
+  display: block;
+} 
+       
+@media (max-width: 767px) {
+            #content, #infobox {
+                width:85%;
+                position:relative;
+                float:left;
+                padding-right:1em;
+            }
+            header {
+                margin:auto;
+                text-align:center;
+            }
+            #map {
+                position:absolute;
+                left:0;
+                width:100%;
+                margin:0;
+                padding:0;
+            }
+        } 
