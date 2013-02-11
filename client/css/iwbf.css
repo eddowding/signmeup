@@ -86,7 +86,7 @@ body > header {
 }
 #infobox { 
     width:15%;
-    min-width: 120px;
+    min-width: 178px;
     top:5em;
     right:0;
     display:none;     
@@ -216,7 +216,7 @@ article {
 
 .table-condensed td {
   padding: 3px 4px 0 4px; 
-  text-transform: uppercase;
+  text-transform: uppercase; 
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
