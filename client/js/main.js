@@ -38,6 +38,7 @@ require.config({
         }
     },
     paths: {
+        'bootstrap': "lib/bootstrap.min",
         'backbone': "lib/backbone-min",
         'backbone-tastypie': "lib/backbone-tastypie",
         'backbone-analytics': "lib/backbone.analytics",
