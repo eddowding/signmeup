@@ -29,6 +29,10 @@ define([
     })
     
     App.addInitializer(function(options) {
+        $('.popover').popover('toggle')
+    })
+    
+    App.addInitializer(function(options) {
         
         require([
             'jspostcode',
