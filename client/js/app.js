@@ -25,6 +25,7 @@ define([
     App.addInitializer(function(options) {
         Backbone.history.start({
             root: App.root
+            // pushState: true
         });
     })
     
@@ -43,7 +44,7 @@ define([
             ], function() {
                 // Validators
                 jQuery.validator.addMethod("postcode", function(value, element) { 
-                  return checkPostCode(value)
+                  return checkPostCode(value);
                 }, "Please enter a valid UK postcode");
             })
     });
@@ -61,7 +62,7 @@ define([
     })
     
     App.vent.on("postcodeform:submit", function(postcode){
-        App.Router.navigate('postcode/' + postcode + '/',  {trigger: true} )
+        App.Router.navigate('postcode/' + postcode + '/',  {trigger: true} );
     });
 
     App.vent.on("infobox:show", function(id){
@@ -76,12 +77,12 @@ define([
                 var view = new infoboxView({model: App.info_model});
                 App.info_model.fetch({
                     success: function() {
-                        App.regionInfobox.show(view)
-                        App.regionInfobox.$el.slideDown()
+                        App.regionInfobox.show(view);
+                        App.regionInfobox.$el.slideDown();
                     }
                 });
             } else {
-                App.regionInfobox.currentView.model.fetch()
+                App.regionInfobox.currentView.model.fetch();
             }
         
         });
@@ -91,6 +92,6 @@ define([
         
     });
     
-    window.App = App
-    return App
+    window.App = App;
+    return App;
 })

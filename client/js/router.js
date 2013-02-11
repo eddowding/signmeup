@@ -19,6 +19,7 @@ define([
                 });
             },
             postcode: function(postcode) {
+                console.log('called again');
                 require([
                     'views/postcodeView',
                     'models/postcodeModel',
@@ -27,11 +28,16 @@ define([
                     var postcode_model = new postcodeModel({postcode: postcode});
                     var signup_model = new signupModel();
                     var view = new postcodeView({model: postcode_model, signup: signup_model});
+                    console.log(postcode_model);
                     postcode_model.fetch({
-                        success: function() {
-                            signup_model.set({location: [postcode_model.get('wgs84_lat'), postcode_model.get('wgs84_lon')]});
+                        success: function(model, response, options) {
+                            var location = [model.get('wgs84_lat'), model.get('wgs84_lon')];
+                            signup_model.set({location: location});
                             App.regionMain.show(view);
                             App.vent.trigger("infobox:show");
+                        },
+                        error: function() {
+                            console.log('Error!')
                         }
                     });
                 });
