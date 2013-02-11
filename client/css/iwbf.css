@@ -142,17 +142,17 @@ article {
 }
 
 .how {
-  background: rgba(226,98,32,0.6); 
+  background: rgba(226,98,32,0.8); 
   color: #fff;
 }
 
 .what {
-  background: rgba(226,63,53,0.6); 
+  background: rgba(226,63,53,0.8); 
   color: #fff;
 }
 
 .eat {
-  background: rgba(158,0,240,0.6); 
+  background: rgba(162,0,26,0.8); 
   color: #fff;
 }
 
@@ -167,7 +167,7 @@ article {
 }
 
 .eat_1 {
-  background: rgba(158,0,240,1); 
+  background: rgba(162,0,26,1); 
   color: #fff;
 }
 
