@@ -29,7 +29,7 @@ define([
     })
     
     App.addInitializer(function(options) {
-        $('.popover').popover('toggle')
+        $('.pop').popover('toggle')
     })
     
     App.addInitializer(function(options) {
