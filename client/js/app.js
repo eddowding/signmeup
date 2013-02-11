@@ -5,7 +5,8 @@ define([
     'backbone',
     'marionette',
     'views/mapView',
-    'collections/signups'
+    'collections/signups',
+    'bootstrap'
     ], function($, _, Backbone, Marionette, mapView, signupCollection) {
     'use strict';
     

@@ -184,5 +184,4 @@ TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django.TemplateBacke
 try:
     from local_settings import *
 except:
-    print "You may want to make a local_settings.py file."    
-
+    print "You may want to make a local_settings.py file."
