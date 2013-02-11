@@ -27,7 +27,6 @@ define([
                         required: true,
                         postcode: true
                     },
-                    name: 'required',
                     email:{
                         required: true,
                         email: true
