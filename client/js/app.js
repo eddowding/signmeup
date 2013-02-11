@@ -30,9 +30,10 @@ define([
     
     App.addInitializer(function(options) {
         $('body').tooltip({
-            selector: '.pop'
+            selector: '.pop',
+            placement: 'right'
         });
-    });
+    }); 
         
     App.addInitializer(function(options) {
         

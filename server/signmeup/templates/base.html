@@ -18,7 +18,12 @@
         <link rel="stylesheet" href="{% static "css/iwbf.css" %}" type="text/css">
         <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
         {# <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen"> #}
-      
+        
+        <script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "79f78eff-58ae-4146-9a40-dfa91e5bc915", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+        
+
     </head>
     <body id={% block body_id %}{% endblock body_id %}>
         <header id="header">
@@ -108,7 +113,7 @@
         <table class="table" style="margin:0;" >
             <tr>
             <td style="background: #000; color: #fff; border-bottom: 3px solid white; padding-bottom: 1px;" >
-              <h1 style="margin: 5px 0 0 0; text-align: center; font-weight: normal;">I'd like more…</h1> 
+              <h1 style="margin: 5px 0 0 0; text-align: center; font-weight: normal;">I'd like...</h1> 
             </td>
             </tr>
             
@@ -130,8 +135,8 @@
 <label class="checkbox pop list_options"  data-toggle="tooltip" title="home delivery, directly from the producers or their representatives"><input type="checkbox" id="local_food" name="local_food">Veg-box  / Meat-box / Recipe-box</label>
 <label class="checkbox pop list_options"  data-toggle="tooltip" title="buy in bulk for better deals"><input type="checkbox" id="local_food" name="local_food">Group buying</label>
 <label class="checkbox pop list_options"  data-toggle="tooltip" title="investing in local food"><input type="checkbox" id="local_food" name="local_food">Community Supported Agriculture</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="Supermarkets"><input type="checkbox" id="local_food" name="local_food">Convenient!</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="Food bank"><input type="checkbox" id="local_food" name="local_food">because that's my only budget</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="Convenient!"><input type="checkbox" id="local_food" name="local_food">Supermarkets</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="Because that's what my budget means :("><input type="checkbox" id="local_food" name="local_food">Food bank</label>
 
  
 
@@ -289,7 +294,13 @@
             <tr> 
             
             <td style="background: #66B330; color: #fff;border-bottom: 2px solid white;  ">
-              sdf
+              <span class='st_sharethis_vcount' displayText='ShareThis'></span>
+              <span class='st_facebook_vcount' displayText='Facebook'></span>
+              <span class='st_twitter_vcount' displayText='Tweet'></span>
+              <span class='st_linkedin_vcount' displayText='LinkedIn'></span>
+              <span class='st_googleplus_vcount' displayText='Google +'></span>
+              <span class='st_pinterest_vcount' displayText='Pinterest'></span>
+              <span class='st_email_vcount' displayText='Email'></span>
             </td>
             </tr> 
           </table> 
@@ -335,5 +346,7 @@
             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.css" /> 
         <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" /><![endif]-->
         <script data-main="{% static "js/main" %}" src="{% static "js/require-jquery.js" %}"></script>
+        
+
     </body>
 </html>

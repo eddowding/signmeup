@@ -167,6 +167,12 @@ article {
   font-size: 18px;
 }
 
+.tooltip {
+  font-size: 14px;
+  color: #fff;
+  width: 200px;  
+}
+
 .table-condensed td {
   padding: 3px 0 0 4px; 
 }
