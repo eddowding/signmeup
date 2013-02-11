@@ -15,18 +15,14 @@
 
         <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css" media="screen">
         <link rel="stylesheet" href="{% static "css/bootstrap-responsive.min.css" %}" type="text/css">
-        <link rel="stylesheet" href="{% static "css/iwbf.css" %}" type="text/css">
         <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
-        {# <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen"> #}
+        <link rel="stylesheet" href="{% static "css/iwbf.css" %}" type="text/css">
         
-        <script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "79f78eff-58ae-4146-9a40-dfa91e5bc915", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
         
 
     </head>
     <body id={% block body_id %}{% endblock body_id %}>
-        <header id="header">
+        <header>
             <img src="{% static "images/iwbf_logo.png" %}" alt="I Want Better Food" />
             <nav id="menu">
                 <ul>
@@ -35,10 +31,19 @@
                 </ul>
             </nav>
         </header>
+        
+        <section id="wrapper">
+            <section id="map" class="grayscale"></section>
+            <section id="content" class="box"></section>
+            <section id="infobox" class="box"></section>
+        </section>
+        <footer class="navbar navbar-fixed-bottom">
+            Sponsors 
+            <a href="http://buckybox.com" target="_blank"><img src="{% static "images/buckybox.png" %}"  alt="BuckyBox" /></a>
+            <a href="http://foodtrade.com" target="_blank"><img src="{% static "images/foodtrade.png" %}" alt="FoodTrade" /></a>
+            <a href="http://www.geovation.org.uk/" target="_blank"><img  src="{% static "images/geovation.png" %}" alt="Geovation" /></a>
+        </footer>
 
-        <section id="map" class="grayscale"></section>
-        <section id="content" class="box"></section>
-        <section id="infobox" class="box"></section>
 
         <script id="postcodeForm" type="text/template">
          <article>
@@ -408,31 +413,17 @@ width: 140px;" name="postcode" id="postcode"  placeholder="Postcode">
         
         <script id="privacyView" type="text/template">     
           <article>
-          
-          
-          
-          
-          
+
+
           </article>
         </script>
-
-        
-        
-        
-        <footer>
-            Sponsors 
-            <a href="http://buckybox.com" target="_blank"><img src="{% static "images/buckybox.png" %}"  alt="BuckyBox" /></a>
-            
-
-            <a href="http://foodtrade.com" target="_blank"><img src="{% static "images/foodtrade.png" %}" alt="FoodTrade" /></a>
-            
-            <a href="http://www.geovation.org.uk/" target="_blank"><img  src="{% static "images/geovation.png" %}" alt="Geovation" /></a>
-        </footer>
-
         
             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.css" /> 
         <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" /><![endif]-->
         <script data-main="{% static "js/main" %}" src="{% static "js/require-jquery.js" %}"></script>
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "79f78eff-58ae-4146-9a40-dfa91e5bc915", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
         
 
     </body>
