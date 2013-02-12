@@ -41,24 +41,24 @@ class SignUp(Document):
     mapit_info = fields.DictField()
     
     # Checkboxes
-    local_food = fields.BooleanField(verbose_name="Local Food")
-    independent_biz = fields.BooleanField(verbose_name="Independent business")
-    group_buying = fields.BooleanField(verbose_name="Group buying")
-    supermarkets = fields.BooleanField(verbose_name="Supermarkets")
-    food_bank = fields.BooleanField(verbose_name="Food bank")
-    home_delivery = fields.BooleanField(verbose_name="Home delivery")
-    csa = fields.BooleanField(verbose_name="CSA")
-    veg_box = fields.BooleanField(verbose_name="Veg box")
-    longer_opening = fields.BooleanField(verbose_name="Longer opening")
-    reduced_waste = fields.BooleanField(verbose_name="Reduced waste")
-    less_packaging = fields.BooleanField(verbose_name="Less packaging")
-    work_food = fields.BooleanField(verbose_name="Better food at work")
-    seasonal_food = fields.BooleanField(verbose_name="Seasonal food")
-    organic_food = fields.BooleanField(verbose_name="Organic food")
-    ethnic_food = fields.BooleanField(verbose_name="Ethnic food")
-    cheaper_food = fields.BooleanField(verbose_name="Cheaper food")
-    branded_food = fields.BooleanField(verbose_name="Branded food")
-    healthy_ready_meals = fields.BooleanField(verbose_name="Healthy ready meals")
+    local_food = fields.BooleanField(verbose_name="Local Food", default=False)
+    independent_biz = fields.BooleanField(verbose_name="Independent business", default=False)
+    group_buying = fields.BooleanField(verbose_name="Group buying", default=False)
+    supermarkets = fields.BooleanField(verbose_name="Supermarkets", default=False)
+    food_bank = fields.BooleanField(verbose_name="Food bank", default=False)
+    home_delivery = fields.BooleanField(verbose_name="Home delivery", default=False)
+    csa = fields.BooleanField(verbose_name="CSA", default=False)
+    veg_box = fields.BooleanField(verbose_name="Veg box", default=False)
+    longer_opening = fields.BooleanField(verbose_name="Longer opening", default=False)
+    reduced_waste = fields.BooleanField(verbose_name="Reduced waste", default=False)
+    less_packaging = fields.BooleanField(verbose_name="Less packaging", default=False)
+    work_food = fields.BooleanField(verbose_name="Better food at work", default=False)
+    seasonal_food = fields.BooleanField(verbose_name="Seasonal food", default=False)
+    organic_food = fields.BooleanField(verbose_name="Organic food", default=False)
+    ethnic_food = fields.BooleanField(verbose_name="Ethnic food", default=False)
+    cheaper_food = fields.BooleanField(verbose_name="Cheaper food", default=False)
+    branded_food = fields.BooleanField(verbose_name="Branded food", default=False)
+    healthy_ready_meals = fields.BooleanField(verbose_name="Healthy ready meals", default=False)
     
     token = fields.StringField()
     confirmed = fields.BooleanField(default=False)
@@ -97,9 +97,12 @@ class SignUp(Document):
             # For now, just update the whole coultry.  More to follow.
             area, created = LocalInfo.objects.get_or_create(type='country', name='UK')
             for key in self._fields:
-                if key in self.COLLECT and bool(getattr(self, key)):
-                    count = area.info.get(key, 0) + 1
-                    area.info[key] = count
+                if key in self.COLLECT:
+                    if bool(getattr(self, key)):
+                        count = area.info.get(key, 0) + 1
+                        area.info[key] = count
+                    else:
+                        area.info[key] = area.info.get(key, 0)
             area.save()
         
         return m

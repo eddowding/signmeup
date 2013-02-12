@@ -7,7 +7,7 @@ define([
             return "/api/v1/localinfo/" + this.get("id") + '/';
         },
         defaults:  {
-            info : { 
+            info {
                 independent_biz: 0,
                 veg_box: 0,
                 group_buying: 0,
@@ -25,8 +25,10 @@ define([
                 ethnic_food: 0,
                 cheaper_food: 0,
                 branded_food: 0,
-                healthy_ready_meals: 0 
+                healthy_ready_meals: 0
             }
         }
     });
 });  
+
+
