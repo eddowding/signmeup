@@ -7,7 +7,7 @@ define([
             return "/api/v1/localinfo/" + this.get("id") + '/';
         },
         defaults:  {
-            info {
+            info: {
                 independent_biz: 0,
                 veg_box: 0,
                 group_buying: 0,
