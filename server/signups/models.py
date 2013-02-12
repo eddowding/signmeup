@@ -81,7 +81,7 @@ class SignUp(Document):
 
             send_templated_mail(
                 template_name='new_signup',
-                from_email='hello@sustaination.co',
+                from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[self.email],
                 context={
                     'token': self.token,
