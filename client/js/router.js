@@ -7,8 +7,10 @@ define([
             routes: {
                 ''                           : 'home',
                 'postcode/:postcode/'        : 'postcode',
-                'thanks/'                     : 'thanks',
+                'thanks/'                    : 'thanks',
                 'share/'                     : 'share',
+                'about/'                     : 'about',
+                'privacy/'                   : 'privacy'
             },
             home: function() {
                 require([
@@ -39,24 +41,43 @@ define([
                 });
             },
             thanks: function() {
-                    require([
-                        'views/thankyouView',
-                    ], function(thankyouView){
-                        App.vent.trigger('infobox:show')
-                        var view = new thankyouView();
-                            App.regionMain.show(view)
-                        });
-                
+                require([
+                    'views/thankyouView',
+                ], function(thankyouView){
+                    App.vent.trigger('infobox:show')
+                    var view = new thankyouView();
+                        App.regionMain.show(view)
+                    });
             },
             share: function() {
-                    require([
-                        'views/shareView',
-                    ], function(shareView){
-                        App.vent.trigger('infobox:show')
-                        var view = new shareView();
-                            App.regionMain.show(view)
-                        });
-                
+                require([
+                    'views/shareView',
+                ], function(shareView){
+                    App.vent.trigger('infobox:show')
+                    var view = new shareView();
+                        App.regionMain.show(view)
+                    });
+            },
+            privacy: function() {
+                require([
+                    'text!templates/privacy.html',
+                ], function(privacyText){
+                    // App.vent.trigger('infobox:show')
+                    var view = Backbone.Marionette.ItemView.extend({
+                        template: '#privacyView',
+                        onRender: function() {
+                            this.$el.html(privacyText)
+                        }
+                    });
+                    App.regionMain.show(new view)
+                });
+            },
+            about: function() {
+                App.vent.trigger('infobox:show')
+                var view = Backbone.Marionette.ItemView.extend({
+                    template: '#aboutView',
+                });
+                App.regionMain.show(new view)
             }
             
         })
