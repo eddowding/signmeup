@@ -161,7 +161,7 @@ LOGGING = {
 }
 
 EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
-DEFAULT_FROM_EMAIL = "I Want Better Food <be@sustaination.co.uk>"
+DEFAULT_FROM_EMAIL = '"I Want Better Food" <be@sustaination.co.uk>'
 
 CELERY_EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 BROKER_URL = 'redis://localhost:6379/0'
