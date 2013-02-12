@@ -41,12 +41,11 @@ html, body {
 #map {
     height:100%;
     width:100%;
-    top:-50%;
+    top:0;
     bottom:0;
     left:0;
     position:fixed;
     z-index:0;
-        padding-bottom:400px;
 }
 body > header {
     padding:0 1.3em;
