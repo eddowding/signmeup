@@ -3,3 +3,4 @@
 /env
 server/db.sqlite
 /server/signmeup/local_settings.py
+/server/celerybeat-schedule.db

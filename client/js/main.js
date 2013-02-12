@@ -52,7 +52,8 @@ require.config({
         'proj4leaflet': 'lib/proj4leaflet',
         'jspostcode': 'lib/jspostcode',
         'jquery.validate': 'lib/jquery.validate.min',
-        'modernizr': 'lib/modernizr'
+        'modernizr': 'lib/modernizr',
+        'templates': '../templates/'
         
     }
 });
