@@ -169,7 +169,7 @@ article {
 }
 
 
-.how {
+.eat {
   background: rgba(226,98,32,0.8); 
   color: #fff;
 }
@@ -179,12 +179,12 @@ article {
   color: #fff;
 }
 
-.eat {
+.how {
   background: rgba(162,0,26,0.8); 
   color: #fff;
 }
 
-.how_1 {
+.eat_1 {
   background: rgba(226,98,32,1); 
   color: #fff;
 }
@@ -194,7 +194,7 @@ article {
   color: #fff;
 }
 
-.eat_1 {
+.how_1 {
   background: rgba(162,0,26,1); 
   color: #fff;
 }

@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:title" content="I Want Better Food" />
         <meta property="og:type" content="cause" />
-        <meta property="og:url" content="http://iwantbetterfood.com/" />
-        <meta property="og:image" content="{% static "images/IWANTBETTERFOOD_LOGO_OG.png" %}" />
+        <meta property="og:url" content="http://www.iwantbetterfood.com/" />
+        <meta property="og:image" content="http://www.iwantbetterfood.com/{% static "images/IWANTBETTERFOOD_LOGO_OG.png" %}" />
         <meta property="og:site_name" content="I Want Better Food" />
         <meta property="og:description" content="If we want better food, we have to ask for it. Add your marker to this collaborative map and let companies know you'll support them doing better." />
         <meta property="fb:admins" content="573487029" />
@@ -59,6 +59,7 @@
             <a href="http://foodtrade.com" target="_blank"><img src="{% static "images/foodtrade.png" %}" alt="FoodTrade" /></a>
             <a href="http://www.geovation.org.uk/" target="_blank"><img  src="{% static "images/geovation.png" %}" alt="Geovation" /></a>
             <a href="http://buckybox.com" target="_blank"><img src="{% static "images/buckybox.png" %}"  alt="BuckyBox" /></a>
+            <a href="http://sustainablefoodtrust.org" target="_blank"><img src="{% static "images/sft.png" %}"  alt="Sustinable Food Trust" /></a>
             
             
             <nav id="menu" class="pull-right">
@@ -146,30 +147,30 @@
             </td>
             </tr>
             
-            <tr> 
+            
+            
+       <tr>
               <td style="background: #E26220; color: #fff;border-bottom: 1px solid #E68D66; padding: 8px 5px 0px 5px;">
-                <h2 style="font-size:18px;color: rgba(255,255,255,0.85);">
+              
+            <h2 style="font-size:18px;color: rgba(255,255,255,0.85);">
                 <i class="icon-circle-arrow-down pull-right" style="color: rgba(255,255,255,0.4);"></i>
-                HOW I WANT TO GET IT</h2> 
+                WHAT I WANT TO EAT</h2> 
               </td>
             </tr>
-            
-          <tr>
-            
+             
+            <tr> 
             <td style="background: #E26220; color: #fff;border-bottom: 2px solid white;">
-             
-    
-             
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="a small company, where profits are kept locally"><input type="checkbox" id="independent_biz" name="independent_biz">Independent business</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="home delivery, directly from the producers or their representatives"><input type="checkbox" id="veg_box" name="veg_box">Veg-box  / Meat-box / Recipe-box</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="buy in bulk for better deals"><input type="checkbox" id="group_buying" name="group_buying">Group buying</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="investing in local food"><input type="checkbox" id="csa" name="csa">Community Supported Agriculture (CSA)</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="Convenient!"><input type="checkbox" id="supermarkets" name="supermarkets">Supermarkets</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="Because that's what my budget means :("><input type="checkbox" id="food_bank" name="food_bank">Food bank</label>
+            <label class="checkbox pop list_options"  data-toggle="tooltip" title="as local as possible, anyway! #coffee"><input type="checkbox" id="local_food" name="local_food">Locally produced</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="in stock when it’s in season"><input type="checkbox" id="seasonal_food" name="seasonal_food">Seasonal / fresh</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="no pesticides, great animal welfare"><input type="checkbox" id="organic_food" name="organic_food">Organic</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="more cultural variety to suit my palette"><input type="checkbox" id="ethnic_food" name="ethnic_food">International / ethnic</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="and horseburgers, be damned!"><input type="checkbox" id="cheaper_food" name="cheaper_food">Cheaper food</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="names you know, products you're used to"><input type="checkbox" id="branded_food" name="branded_food">Branded produce</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="od food, quickly (low salt, low fat, no preservatives..)"><input type="checkbox" id="healthy_ready_meals" name="healthy_ready_meals">Healthy ready meals</label>
 
-  
-            </td>
-            </tr>
+              </td> 
+           </tr>
+             
             
             <tr> 
               <td style="background: #E54137; color: #fff;border-bottom: 1px solid #E87774; padding: 8px 5px 0px 5px;"> 
@@ -177,8 +178,7 @@
 
                 <i class="icon-circle-arrow-down pull-right" style="color: rgba(255,255,255,0.4);"></i>
                 WHAT I NEED</h2> 
-
-                
+ 
               </td>
             </tr>
             
@@ -194,34 +194,41 @@
 
             </td>
             </tr>
-           
-           <tr>
+            
+                 
+            <tr> 
            <td style="background: #A2001A; color: #fff;border-bottom: 1px solid #B84F61; padding: 8px 5px 0px 5px;">
-            <h2 style="font-size:18px;color: rgba(255,255,255,0.85);">
+                <h2 style="font-size:18px;color: rgba(255,255,255,0.85);">
                 <i class="icon-circle-arrow-down pull-right" style="color: rgba(255,255,255,0.4);"></i>
-                WHAT I WANT TO EAT</h2> 
+                HOW I WANT TO GET IT</h2> 
               </td>
             </tr>
             
+          <tr>
             
-            <tr> 
             <td style="background: #A2001A; color: #fff;border-bottom: 2px solid white;  ">
-            <label class="checkbox pop list_options"  data-toggle="tooltip" title="as local as possible, anyway! #coffee"><input type="checkbox" id="local_food" name="local_food">Locally produced</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="in stock when it’s in season"><input type="checkbox" id="seasonal_food" name="seasonal_food">Seasonal / fresh</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="no pesticides, great animal welfare"><input type="checkbox" id="organic_food" name="organic_food">Organic</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="more cultural variety to suit my palette"><input type="checkbox" id="ethnic_food" name="ethnic_food">International / ethnic</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="and horseburgers, be damned!"><input type="checkbox" id="cheaper_food" name="cheaper_food">Cheaper food</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="names you know, products you're used to"><input type="checkbox" id="branded_food" name="branded_food">Branded produce</label>
-<label class="checkbox pop list_options"  data-toggle="tooltip" title="od food, quickly (low salt, low fat, no preservatives..)"><input type="checkbox" id="healthy_ready_meals" name="healthy_ready_meals">Healthy ready meals</label>
+           
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="a small company, where profits are kept locally"><input type="checkbox" id="independent_biz" name="independent_biz">Independent business</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="home delivery, directly from the producers or their representatives"><input type="checkbox" id="veg_box" name="veg_box">Veg-box  / Meat-box / Recipe-box</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="buy in bulk for better deals"><input type="checkbox" id="group_buying" name="group_buying">Group buying</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="investing in local food"><input type="checkbox" id="csa" name="csa">Community Supported Agriculture (CSA)</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="Convenient!"><input type="checkbox" id="supermarkets" name="supermarkets">Supermarkets</label>
+<label class="checkbox pop list_options"  data-toggle="tooltip" title="Because that's what my budget means :("><input type="checkbox" id="food_bank" name="food_bank">Food bank</label>
 
-              </td> 
-           </tr>
+  
+            </td>
+            </tr>
+            
+            
+           
+           
            
            
             <tr>
             <td style="background: #66B330; color: #fff;border: 1px solid white; text-align: center;">
+            
                 <label for="email"><input type=email name=email id=email value="" placeholder="Email" style="width:90%;"></label>                             
-                <label class="checkbox"><input type="checkbox" checked="checked" id="consent" name="consent">Please let me know how I can help locally, eg crowdfunding for local food businesses.</label>
+              
 
                <button type="submit" class="btn btn-inverse btn-large">Add my voice</button>    
             </td>
@@ -238,10 +245,31 @@
           <article> 
             
           <h2 style="margin: 5px 0 0 0; text-align: center; font-weight: normal; font-size: 20px; color: #444;">The story so far&hellip;</h2> 
+          <p style="line-height: 1.2; color: #666;">Here's what others like you from across the UK would like:</p>
                 
          <table class="table table-condensed" style="margin:0;" >
                                   
+              
           <tr>
+            <td class="eat_1 number"><%= info.local_food %></td><td class="eat">Locally produced</td></tr><tr>
+            <td class="eat_1 number"><%= info.seasonal_food %></td><td class="eat">Seasonal</td></tr><tr>
+            <td class="eat_1 number"><%= info.organic_food %></td><td class="eat">Organic </td></tr><tr>
+            <td class="eat_1 number"><%= info.ethnic_food %></td><td class="eat">Ethnic / international</td></tr><tr>
+            <td class="eat_1 number"><%= info.cheaper_food %></td><td class="eat">Cheaper</td></tr><tr>
+            <td class="eat_1 number"><%= info.branded_food %></td><td class="eat">Branded</td></tr><tr>
+            <td class="eat_1 number"><%= info.healthy_ready_meals %></td><td class="eat">Healthy ready-meals</td></tr>
+          </tr>
+               
+                                
+          <tr>
+            <td class="what_1 number"><%= info.home_delivery %></td><td class="what">Evening / Home delivery</td></tr><tr>
+            <td class="what_1 number"><%= info.longer_opening %></td><td class="what">Longer opening</td></tr><tr>
+            <td class="what_1 number"><%= info.reduced_waste %></td><td class="what">Reduced food waste</td></tr><tr>
+            <td class="what_1 number"><%= info.less_packaging %></td><td class="what">Less packaging</td></tr><tr>
+            <td class="what_1 number"><%= info.work_food %></td><td class="what" style="border-bottom: 1px solid #fff;">Better food at work</td> </tr>
+          </tr>     
+          
+            <tr>
             <td class="how_1 number">
                <%= info.independent_biz %>              
             </td>  
@@ -293,35 +321,16 @@
             <td class="how" style="border-bottom: 1px solid #fff;">
                Food Bank
             </td>
-          </tr>          
-                           
-           
-                                
-          <tr>
-            <td class="what_1 number"><%= info.home_delivery %></td><td class="what">Evening / Home delivery</td></tr><tr>
-            <td class="what_1 number"><%= info.longer_opening %></td><td class="what">Longer opening</td></tr><tr>
-            <td class="what_1 number"><%= info.reduced_waste %></td><td class="what">Reduced food waste</td></tr><tr>
-            <td class="what_1 number"><%= info.less_packaging %></td><td class="what">Less packaging</td></tr><tr>
-            <td class="what_1 number"><%= info.work_food %></td><td class="what" style="border-bottom: 1px solid #fff;">Better food at work</td> </tr>
-          </tr>     
+          </tr>  
           
           <tr>
-            <td class="eat_1 number"><%= info.local_food %></td><td class="eat">Locally produced</td></tr><tr>
-            <td class="eat_1 number"><%= info.seasonal_food %></td><td class="eat">Seasonal</td></tr><tr>
-            <td class="eat_1 number"><%= info.organic_food %></td><td class="eat">Organic </td></tr><tr>
-            <td class="eat_1 number"><%= info.ethnic_food %></td><td class="eat">Ethnic / international</td></tr><tr>
-            <td class="eat_1 number"><%= info.cheaper_food %></td><td class="eat">Cheaper</td></tr><tr>
-            <td class="eat_1 number"><%= info.branded_food %></td><td class="eat">Branded</td></tr><tr>
-            <td class="eat_1 number"><%= info.healthy_ready_meals %></td><td class="eat">Healthy ready-meals</td></tr>
-          </tr>
-                   
+            <td style="background: #66B330; color: rgba(255,255,255,0.8);border: 1px solid white; text-align: center; text-transform: none; line-height: 1.2;" colspan="2">
+              <p>We'll add more detail and county comparisons when we reach 800 people!</p>            
+            </td>
+          </tr>                            
           </table> 
  
-
-            
-            
-            
-            
+             
             
         </article>
         </script>
@@ -342,6 +351,7 @@
             <td colspan="2" style="background: #E26220; color: #fff;border-bottom: 2px solid white;">
             
               <h2 style="text-align: center;">So, what next?</h2>
+              <p>This is early days for this project, so please be patient whilst we build up steam. We'll add 'heatmaps' to make it more interesting, and make it more useful by showing you relevant companies near you. For now, thank you, and here are some other ways to help. </p>
             </td>
           </td>
 </tr>

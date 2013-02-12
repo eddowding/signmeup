@@ -9,7 +9,7 @@ define([
     return Backbone.View.extend({
         initialize: function(options) {
             this.start = this.options.start || new L.LatLng(51.688642,-2.501599);
-            this.initial_zoom = this.options.start || 6
+            this.initial_zoom = this.options.start ||8
             this.on("map:setview", this.setview)
             this.iconClass = L.icon({
                 iconUrl: '/static/images/marker-icon.png',
