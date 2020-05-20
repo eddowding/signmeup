@@ -18,7 +18,7 @@ django-celery-with-redis==3.0
 django-templated-email==0.4.7
 -e git://github.com/davidmiller/ffs.git@dd36577190dba9b0013327ad83fc2e7152311361#egg=ffs-dev
 gunicorn==0.17.2
-httplib2==0.7.7
+httplib2==0.18.0
 kombu==2.5.4
 mimeparse==0.1.3
 mock==1.0.1
